@@ -1,336 +1,89 @@
-2025-08-13 21:27:22,082 - ERROR - Excel‹N“®ƒGƒ‰[: [WinError 32] ƒvƒƒZƒX‚Íƒtƒ@ƒCƒ‹‚ÉƒAƒNƒZƒX‚Å‚«‚Ü‚¹‚ñB•Ê‚ÌƒvƒƒZƒX‚ªŽg—p’†‚Å‚·B
-2025-08-13 21:27:22,083 - ERROR - Ú×‚ÈƒGƒ‰[î•ñ:
-2025-08-13 21:27:31,198 - ERROR - Excel‹N“®ƒGƒ‰[: [WinError 32] ƒvƒƒZƒX‚Íƒtƒ@ƒCƒ‹‚ÉƒAƒNƒZƒX‚Å‚«‚Ü‚¹‚ñB•Ê‚ÌƒvƒƒZƒX‚ªŽg—p’†‚Å‚·B
-2025-08-13 21:27:31,198 - ERROR - Ú×‚ÈƒGƒ‰[î•ñ:
-2025-08-13 21:29:32,457 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:29:32,457 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:29:32,633 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:29:37,801 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:29:39,113 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:29:43,285 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:29:44,596 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:29:50,415 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:29:51,537 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:29:53,348 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:29:54,607 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:29:56,418 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:29:57,179 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:29:59,043 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:30:00,197 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 21:30:03,199 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:35:16,148 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:35:16,149 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:35:16,351 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:35:21,519 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:35:22,831 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:35:27,003 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:35:28,314 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:35:34,130 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:35:35,252 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:35:37,062 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:35:38,322 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:35:40,135 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:35:40,895 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:35:42,759 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:35:44,213 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:46,028 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:35:47,482 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:49,135 - INFO - ƒŠƒ{ƒ“ƒ{ƒ^ƒ“ '‘¾Žš' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:50,945 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:35:52,400 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:54,106 - INFO - ƒŠƒ{ƒ“ƒ{ƒ^ƒ“ '’†‰›‘µ‚¦' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:55,561 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:57,017 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:35:58,720 - INFO - ƒŠƒ{ƒ“ƒ{ƒ^ƒ“ 'ƒOƒ‰ƒt' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:36:00,176 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:36:01,631 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:36:03,484 - INFO - ƒŠƒ{ƒ“ƒ_ƒCƒAƒƒO 'ƒZƒ‹‚Ì‘Ž®Ý’è' ‚ðŠJ‚«‚Ü‚µ‚½
-2025-08-13 21:36:04,537 - INFO - ƒŠƒ{ƒ“ƒ_ƒCƒAƒƒO‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:36:05,992 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:36:07,644 - INFO - ƒŠƒ{ƒ“ƒRƒ}ƒ“ƒh 'ƒz[ƒ€ > ƒtƒHƒ“ƒg > ‘¾Žš' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 21:36:08,799 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 21:36:11,800 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:40:12,453 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:40:12,453 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:40:12,632 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:40:17,401 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:40:18,312 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:40:22,085 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:40:22,999 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:40:28,816 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:40:29,736 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:40:31,545 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:40:32,403 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:40:34,212 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:40:34,773 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:40:37,038 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:40:38,849 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:40:39,803 - INFO - ‘¾Žš‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:40:41,614 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:40:44,023 - INFO - ’†‰›‘µ‚¦‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:40:45,833 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:40:48,249 - INFO - ’Ê‰ÝŒ`Ž®‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:40:49,903 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:40:51,058 - INFO - ƒZƒ‹‚Ì‘Ž®Ý’èƒ_ƒCƒAƒƒO‚ðŠJ‚«‚Ü‚µ‚½
-2025-08-13 21:40:52,110 - INFO - ƒŠƒ{ƒ“ƒ_ƒCƒAƒƒO‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:40:53,764 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:40:55,419 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:40:58,523 - INFO - ƒŠƒ{ƒ“ƒ{ƒ^ƒ“ 'ƒOƒ‰ƒt' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:41:00,177 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:41:01,332 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 21:41:04,333 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:41:22,883 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:41:22,883 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:41:23,044 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:41:27,813 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:41:28,724 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:41:32,496 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:41:33,409 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:41:39,225 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:41:40,147 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:41:41,957 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:41:42,817 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:41:44,626 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:41:45,184 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:41:47,448 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:41:49,256 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:41:50,211 - INFO - ‘¾Žš‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:41:52,021 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:41:54,429 - INFO - ’†‰›‘µ‚¦‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:41:56,241 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:41:58,657 - INFO - ’Ê‰ÝŒ`Ž®‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:42:00,310 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:42:01,465 - INFO - ƒZƒ‹‚Ì‘Ž®Ý’èƒ_ƒCƒAƒƒO‚ðŠJ‚«‚Ü‚µ‚½
-2025-08-13 21:42:02,518 - INFO - ƒŠƒ{ƒ“ƒ_ƒCƒAƒƒO‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:42:04,173 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:42:05,828 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:42:08,933 - INFO - ƒŠƒ{ƒ“ƒ{ƒ^ƒ“ 'ƒOƒ‰ƒt' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:42:10,824 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:42:12,034 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 21:42:15,036 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:45:01,769 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:45:01,770 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:45:01,940 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:45:07,109 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:45:08,423 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:45:12,593 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:45:13,905 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:45:19,720 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:45:20,840 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:45:22,650 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:45:23,910 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:45:25,720 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:45:26,479 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:45:29,342 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:45:31,152 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:45:34,461 - INFO - ‘¾Žš‚ð“K—p‚µ‚Ü‚µ‚½iƒŠƒ{ƒ“Œo—Rj
-2025-08-13 21:45:36,271 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:45:39,580 - INFO - ’†‰›‘µ‚¦‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:45:41,391 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:45:44,706 - INFO - ’Ê‰ÝŒ`Ž®‚ð“K—p‚µ‚Ü‚µ‚½
-2025-08-13 21:45:46,861 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:45:48,015 - INFO - ƒZƒ‹‚Ì‘Ž®Ý’èƒ_ƒCƒAƒƒO‚ðŠJ‚«‚Ü‚µ‚½
-2025-08-13 21:45:49,068 - INFO - ƒŠƒ{ƒ“ƒ_ƒCƒAƒƒO‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:45:51,222 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:45:53,377 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '‘}“ü' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:45:56,981 - INFO - ƒŠƒ{ƒ“ƒ{ƒ^ƒ“ 'ƒOƒ‰ƒt' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:45:59,135 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:46:00,291 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 21:46:03,292 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:49:04,768 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:49:04,768 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:49:04,956 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:49:10,122 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:11,436 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:15,611 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:16,922 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:20,526 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:49:28,634 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:49:28,634 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:49:28,792 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:49:33,960 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:35,271 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:39,444 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:40,755 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:49:46,573 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:49:47,691 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:49:49,501 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:49:50,759 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:49:52,570 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:49:53,328 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:49:56,192 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:49:58,347 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '”Ž®' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:50:02,104 - INFO - –¼‘O‚ÌŠÇ—ƒ_ƒCƒAƒƒO‚ðŠJ‚«‚Ü‚µ‚½
-2025-08-13 21:50:08,743 - INFO - ƒŠƒ{ƒ“ƒ_ƒCƒAƒƒO‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:50:10,897 - INFO - ƒŠƒ{ƒ“ƒ^ƒu 'ƒz[ƒ€' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:50:12,055 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 21:50:15,057 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 21:53:50,848 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:53:50,848 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 21:53:51,030 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 21:53:56,198 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:53:57,511 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:54:01,683 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:54:02,995 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 21:54:08,811 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:54:09,933 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 21:54:11,743 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:54:13,002 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 21:54:14,813 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 21:54:15,571 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 21:54:18,434 - INFO - ƒZƒ‹‚ð‘Ž®Ý’è‚µ‚Ü‚µ‚½: currency
-2025-08-13 21:54:20,589 - INFO - ƒŠƒ{ƒ“ƒ^ƒu '”Ž®' ‚ðƒNƒŠƒbƒN‚µ‚Ü‚µ‚½
-2025-08-13 21:54:24,348 - INFO - –¼‘O‚ÌŠÇ—ƒ_ƒCƒAƒƒO‚ðŠJ‚«‚Ü‚µ‚½
-2025-08-13 21:54:28,459 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 22:16:37,299 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:16:37,299 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:16:37,471 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:16:42,638 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:16:43,948 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:16:48,120 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:16:49,431 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:16:55,248 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:16:56,364 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:16:58,174 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:16:59,432 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:17:01,242 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:17:02,000 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:17:04,155 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:17:07,861 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>B' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:17:09,015 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:17:12,017 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 22:19:55,423 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:19:55,423 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:19:55,612 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:20:00,781 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:20:02,092 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:20:06,262 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:20:07,572 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:20:13,390 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:20:14,507 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:20:16,318 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:20:17,577 - INFO - ”Ž®‚ð‘}“ü‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:20:19,387 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:20:20,146 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:20:23,854 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:20:27,560 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>B' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:20:28,715 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:20:31,717 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 22:23:22,877 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:23:22,877 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:23:23,053 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:23:28,223 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:23:29,536 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:23:32,262 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 22:23:41,316 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:23:41,316 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:23:41,499 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:23:46,668 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:23:47,979 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:23:52,151 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:23:53,464 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:23:59,282 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:24:00,403 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:24:02,214 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:24:02,924 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:24:04,735 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:24:05,493 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:24:09,201 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:24:12,961 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>AC' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:24:14,116 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:24:17,117 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 22:26:21,865 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:26:21,866 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:26:22,048 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:26:27,215 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:26:28,527 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:26:32,698 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:26:34,010 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:26:39,828 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:26:40,948 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:26:42,759 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:26:43,467 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:26:45,278 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:26:46,036 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:26:49,744 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:26:51,557 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:26:55,321 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>AC' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:26:56,476 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:26:59,478 - INFO - Excel‚ð•Â‚¶‚Ü‚µ‚½
-2025-08-13 22:29:45,167 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/AppData/Roaming/Microsoft/Excel\Excel15.xlb
-2025-08-13 22:29:45,168 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\desktop.ini
-2025-08-13 22:29:45,168 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\EcoDecoTooL.lnk
-2025-08-13 22:29:45,170 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\Qbook.zip
-2025-08-13 22:29:45,170 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\scshot.bat - ƒVƒ‡[ƒgƒJƒbƒg.lnk
-2025-08-13 22:29:45,171 - ERROR - Excel‹N“®ƒGƒ‰[: [WinError 32] ƒvƒƒZƒX‚Íƒtƒ@ƒCƒ‹‚ÉƒAƒNƒZƒX‚Å‚«‚Ü‚¹‚ñB•Ê‚ÌƒvƒƒZƒX‚ªŽg—p’†‚Å‚·B
-2025-08-13 22:29:45,171 - ERROR - Ú×‚ÈƒGƒ‰[î•ñ:
-2025-08-13 22:30:01,746 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\demo.xlsx
-2025-08-13 22:30:01,748 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:30:01,748 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:30:01,934 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:30:07,101 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:30:08,414 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:30:15,194 - INFO - ƒL[ƒ{[ƒhƒVƒ‡[ƒgƒJƒbƒg‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:30:16,506 - INFO - TabƒL[‚Å•ÛŒìƒrƒ…[‚ð–³Œø‚É‚µ‚Ü‚µ‚½
-2025-08-13 22:30:22,326 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:30:23,446 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:30:25,256 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:30:25,965 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:30:27,776 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:30:28,534 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:30:32,242 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:30:34,054 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:30:37,812 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>AC' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:30:38,967 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:30:45,334 - INFO - Excel‚ð‹­§I—¹‚µ‚Ü‚µ‚½
-2025-08-13 22:30:45,336 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\demo.xlsx
-2025-08-13 22:32:11,542 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:32:11,542 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:32:11,725 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:32:19,544 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:32:20,665 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:32:34,801 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\demo.xlsx
-2025-08-13 22:32:34,803 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:32:34,803 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:32:34,982 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:32:42,800 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:32:43,917 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:32:45,726 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:32:46,436 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:32:48,246 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:32:49,005 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:32:52,714 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:32:54,525 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:32:58,282 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>AC' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:32:59,437 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:33:05,802 - INFO - Excel‚ð‹­§I—¹‚µ‚Ü‚µ‚½
-2025-08-13 22:33:05,804 - INFO - •œ‹Œƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta/Desktop\demo.xlsx
-2025-08-13 22:35:44,637 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:35:44,638 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:35:44,814 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:35:52,632 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:35:53,752 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:35:55,562 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:35:56,270 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:35:58,081 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:35:58,840 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:36:02,548 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:36:04,358 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:36:08,119 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>AC' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:36:09,273 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:36:15,638 - INFO - Excel‚ð‹­§I—¹‚µ‚Ü‚µ‚½
-2025-08-13 22:36:15,640 - INFO - ƒRƒs[‚µ‚½ƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:37:26,448 - INFO - ƒtƒ@ƒCƒ‹‚ðM—Š‚Å‚«‚éêŠ‚ÉƒRƒs[‚µ‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:37:26,448 - INFO - ƒŒƒWƒXƒgƒŠ‚©‚çExcelƒpƒX‚ðŽæ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
-2025-08-13 22:37:26,626 - INFO - Excelƒtƒ@ƒCƒ‹‚ðŠJ‚«‚Ü‚µ‚½: C:\Users\vinta\Desktop\demo.xlsx
-2025-08-13 22:37:34,443 - INFO - ƒZƒ‹ A1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:37:35,563 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: Hello Excel!
-2025-08-13 22:37:37,374 - INFO - ƒZƒ‹ B1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:37:38,083 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: =A1
-2025-08-13 22:37:39,895 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:37:40,654 - INFO - ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ü‚µ‚½: 1000
-2025-08-13 22:37:44,362 - INFO - ƒŠƒ{ƒ“ƒ^ƒu’ZkƒL[ 'A' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:37:46,172 - INFO - ƒZƒ‹ C1 ‚ð‘I‘ð‚µ‚Ü‚µ‚½
-2025-08-13 22:37:49,932 - INFO - ƒŠƒ{ƒ“’ZkƒL[ 'H>AC' ‚ðŽÀs‚µ‚Ü‚µ‚½
-2025-08-13 22:37:51,087 - INFO - ƒtƒ@ƒCƒ‹‚ð•Û‘¶‚µ‚Ü‚µ‚½
-2025-08-13 22:37:57,455 - INFO - Excel‚ð‹­§I—¹‚µ‚Ü‚µ‚½
+2025-08-13 21:27:22,082 - ERROR - Excelï¿½Nï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[: [WinError 32] ï¿½vï¿½ï¿½ï¿½Zï¿½Xï¿½Íƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Bï¿½Ê‚Ìƒvï¿½ï¿½ï¿½Zï¿½Xï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
+2025-08-13 21:27:22,083 - ERROR - ï¿½Ú×‚ÈƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½:
+2025-08-13 21:27:31,198 - ERROR - Excelï¿½Nï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[: [WinError 32] ï¿½vï¿½ï¿½ï¿½Zï¿½Xï¿½Íƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Bï¿½Ê‚Ìƒvï¿½ï¿½ï¿½Zï¿½Xï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
+2025-08-13 21:27:31,198 - ERROR - ï¿½Ú×‚ÈƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½:
+2025-08-13 21:29:32,457 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½êŠï¿½ÉƒRï¿½sï¿½[ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:29:32,457 - INFO - ï¿½ï¿½ï¿½Wï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Excelï¿½pï¿½Xï¿½ï¿½ï¿½æ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
+2025-08-13 21:29:32,633 - INFO - Excelï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:29:37,801 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:39,113 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:43,285 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:44,596 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:50,415 - INFO - ï¿½Zï¿½ï¿½ A1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:51,537 - INFO - ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: Hello Excel!
+2025-08-13 21:29:53,348 - INFO - ï¿½Zï¿½ï¿½ B1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:54,607 - INFO - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: =A1
+2025-08-13 21:29:56,418 - INFO - ï¿½Zï¿½ï¿½ C1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:29:57,179 - INFO - ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: 1000
+2025-08-13 21:29:59,043 - INFO - ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý’è‚µï¿½Ü‚ï¿½ï¿½ï¿½: currency
+2025-08-13 21:30:00,197 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:30:03,199 - INFO - Excelï¿½ï¿½Â‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:16,148 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½êŠï¿½ÉƒRï¿½sï¿½[ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:35:16,149 - INFO - ï¿½ï¿½ï¿½Wï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Excelï¿½pï¿½Xï¿½ï¿½ï¿½æ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
+2025-08-13 21:35:16,351 - INFO - Excelï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:35:21,519 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:22,831 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:27,003 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:28,314 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:34,130 - INFO - ï¿½Zï¿½ï¿½ A1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:35,252 - INFO - ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: Hello Excel!
+2025-08-13 21:35:37,062 - INFO - ï¿½Zï¿½ï¿½ B1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:38,322 - INFO - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: =A1
+2025-08-13 21:35:40,135 - INFO - ï¿½Zï¿½ï¿½ C1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:40,895 - INFO - ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: 1000
+2025-08-13 21:35:42,759 - INFO - ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý’è‚µï¿½Ü‚ï¿½ï¿½ï¿½: currency
+2025-08-13 21:35:44,213 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:46,028 - INFO - ï¿½Zï¿½ï¿½ A1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:47,482 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:49,135 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ 'ï¿½ï¿½ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:50,945 - INFO - ï¿½Zï¿½ï¿½ B1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:52,400 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:54,106 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:55,561 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½}ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:57,017 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½}ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:35:58,720 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ 'ï¿½Oï¿½ï¿½ï¿½t' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:00,176 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:01,631 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:03,484 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½O 'ï¿½Zï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ý’ï¿½' ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:04,537 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½Â‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:05,992 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:07,644 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½Rï¿½}ï¿½ï¿½ï¿½h 'ï¿½zï¿½[ï¿½ï¿½ > ï¿½tï¿½Hï¿½ï¿½ï¿½g > ï¿½ï¿½ï¿½ï¿½' ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:08,799 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:36:11,800 - INFO - Excelï¿½ï¿½Â‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:12,453 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½êŠï¿½ÉƒRï¿½sï¿½[ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:40:12,453 - INFO - ï¿½ï¿½ï¿½Wï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Excelï¿½pï¿½Xï¿½ï¿½ï¿½æ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
+2025-08-13 21:40:12,632 - INFO - Excelï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:40:17,401 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:18,312 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:22,085 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:22,999 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:28,816 - INFO - ï¿½Zï¿½ï¿½ A1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:29,736 - INFO - ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: Hello Excel!
+2025-08-13 21:40:31,545 - INFO - ï¿½Zï¿½ï¿½ B1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:32,403 - INFO - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: =A1
+2025-08-13 21:40:34,212 - INFO - ï¿½Zï¿½ï¿½ C1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:34,773 - INFO - ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: 1000
+2025-08-13 21:40:37,038 - INFO - ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý’è‚µï¿½Ü‚ï¿½ï¿½ï¿½: currency
+2025-08-13 21:40:38,849 - INFO - ï¿½Zï¿½ï¿½ A1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:39,803 - INFO - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½pï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:41,614 - INFO - ï¿½Zï¿½ï¿½ B1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:44,023 - INFO - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½pï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:45,833 - INFO - ï¿½Zï¿½ï¿½ C1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:48,249 - INFO - ï¿½Ê‰ÝŒ`ï¿½ï¿½ï¿½ï¿½Kï¿½pï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:49,903 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:51,058 - INFO - ï¿½Zï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ý’ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:52,110 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½Â‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:53,764 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½}ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:55,419 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½}ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:40:58,523 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ 'ï¿½Oï¿½ï¿½ï¿½t' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:00,177 - INFO - ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½^ï¿½u 'ï¿½zï¿½[ï¿½ï¿½' ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:01,332 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:04,333 - INFO - Excelï¿½ï¿½Â‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:22,883 - INFO - ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½êŠï¿½ÉƒRï¿½sï¿½[ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:41:22,883 - INFO - ï¿½ï¿½ï¿½Wï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Excelï¿½pï¿½Xï¿½ï¿½ï¿½æ“¾: C:\Program Files\Microsoft Office\Root\Office16\EXCEL.EXE
+2025-08-13 21:41:23,044 - INFO - Excelï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½: C:\Users\vinta\Desktop\demo.xlsx
+2025-08-13 21:41:27,813 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:28,724 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:32,496 - INFO - ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Vï¿½ï¿½ï¿½[ï¿½gï¿½Jï¿½bï¿½gï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:33,409 - INFO - Tabï¿½Lï¿½[ï¿½Å•ÛŒï¿½rï¿½ï¿½ï¿½[ï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+2025-08-13 21:41:39,225 - INFO - ï¿½Zï¿½ï¿½ A1 ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½

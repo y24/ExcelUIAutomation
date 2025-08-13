@@ -13,7 +13,8 @@ env_config = EnvironmentConfig.get_config()
 logging.basicConfig(
     level=getattr(logging, ExcelConfig.LOGGING['level']), 
     format=ExcelConfig.LOGGING['format'],
-    filename=ExcelConfig.LOGGING['file']
+    filename=ExcelConfig.LOGGING['file'],
+    encoding='utf-8'  # UTF-8エンコーディングを明示的に指定
 )
 logger = logging.getLogger(__name__)
 
