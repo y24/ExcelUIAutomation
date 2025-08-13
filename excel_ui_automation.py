@@ -206,7 +206,7 @@ class ExcelUIAutomation:
                 logger.debug(f"ダイアログアクティベートエラー: {e}")
             
             # ダイアログが完全に表示されるまで少し待機
-            time.sleep(1.0)
+            time.sleep(ExcelConfig.get_timing('dialog_wait'))
             
             # アクションに応じたキーを送信（キーを直接渡す）
             send_keys(action)
@@ -725,10 +725,10 @@ def main():
             time.sleep(ExcelConfig.get_timing('excel_startup'))
             
             # ===== セル操作のデモ =====
-            print("セルA1にテキストを入力中...")
-            # セルA1にテキストを入力
-            excel_auto.select_cell(0, 0)  # A1
-            excel_auto.input_text("Hello Excel!")
+            # print("セルA1にテキストを入力中...")
+            # # セルA1にテキストを入力
+            # excel_auto.select_cell(0, 0)  # A1
+            # excel_auto.input_text("Hello Excel!")
             
             # print("セルB1に数式を入力中...")
             # # セルB1に数式を入力
@@ -748,21 +748,21 @@ def main():
             # excel_auto.select_cell(0, 2)  # C1
             # excel_auto.click_ribbon_shortcut("H>AC")
             
-            print("ファイルを保存中...")
-            # ファイルを保存
-            excel_auto.save_file()
-            
             # ===== ダイアログ処理機能のデモ =====
             print("ダイアログ処理機能のデモ...")
 
-            print("名前の定義ダイアログを表示中...")
-            excel_auto.click_ribbon_shortcut("M>M>D")
+            # print("名前の定義ダイアログを表示中...")
+            # excel_auto.click_ribbon_shortcut("M>M>D")
 
             # 単一のダイアログタイトルパターンをチェック
             if excel_auto.is_dialog_present("新しい名前"):
                 print("名前の定義ダイアログが表示されています。キャンセルします")
                 excel_auto.handle_dialog("新しい名前", "{ESC}")
             
+            print("ファイルを保存中...")
+            # ファイルを保存
+            excel_auto.save_file()
+
             print("セルA2にテキストを入力中...")
             # セルA2にテキストを入力
             excel_auto.select_cell(1, 0)  # A2
@@ -772,13 +772,12 @@ def main():
             excel_auto.close_excel()
 
             # # 複数のダイアログ設定を一括処理
-            demo_dialogs = [
-                {'title_patterns': ['保存の確認', 'Save As'], 'action': 'n'},
-                {'title_patterns': ['Microsoft Excel'], 'action': 's'},
+            dialog_sequence = [
+                {'title_patterns': ['保存の確認', 'Save As', 'Microsoft Excel'], 'action': 's'},
                 {'title_patterns': ['エラー', 'Error'], 'action': '{ENTER}'}
             ]
-            print("保存ダイアログが表示されています。ファイルを保存します")
-            excel_auto.wait_and_handle_dialogs(demo_dialogs, timeout=15)
+            print("保存ダイアログが表示されているため、ファイルを保存します")
+            excel_auto.wait_and_handle_dialogs(dialog_sequence, timeout=15)
             
             print("処理が完了しました")
             # 少し待ってから閉じる
