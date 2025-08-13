@@ -2,7 +2,7 @@ import logging
 from utils.excel_automation_helper import ExcelAutomationHelper
 
 def main():
-    """メイン実行例"""
+    """実装サンプル"""
     excel = ExcelAutomationHelper()
     
     try:
