@@ -159,10 +159,6 @@ if __name__ == "__main__":
     print(f"保存ショートカット: {ExcelConfig.get_shortcut('save_file')}")
     print(f"セルA1のアドレス: {ExcelConfig.get_cell_address(0, 0)}")
     print(f"範囲A1:C5のアドレス: {ExcelConfig.get_range_address(0, 0, 4, 2)}")
-    print(f"ホームタブキー: {ExcelConfig.get_ribbon_tab_key('ホーム')}")
-    print(f"挿入タブキー: {ExcelConfig.get_ribbon_tab_key('挿入')}")
-    print(f"太字ボタンキー: {ExcelConfig.get_ribbon_button_key('太字')}")
-    print(f"コピーボタンキー: {ExcelConfig.get_ribbon_button_key('コピー')}")
     
     # 環境設定の確認
     dev_config = EnvironmentConfig.get_config('development')
