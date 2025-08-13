@@ -30,8 +30,7 @@ class ExcelConfig:
     # Excel関連設定
     EXCEL = {
         'process_name': 'excel.exe',
-        'window_title_pattern': '.*Excel.*',
-        'default_file': 'demo.xlsx',
+        'window_title_pattern': '.*Excel.*'
     }
     
     # キーボードショートカット

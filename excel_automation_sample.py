@@ -13,7 +13,7 @@ def main():
     try:
         print("Excelを起動中...")
         # Excelを起動
-        if excel_auto.start_excel(ExcelConfig.get_excel_setting('default_file')):
+        if excel_auto.start_excel("demo.xlsx"):
             print("Excelが正常に起動しました")
             time.sleep(ExcelConfig.get_timing('excel_startup'))
             
@@ -73,8 +73,6 @@ def main():
             excel_auto.wait_and_handle_dialogs(dialog_sequence)
             
             print("処理が完了しました")
-            # 少し待ってから閉じる
-            time.sleep(ExcelConfig.get_timing('excel_startup'))
         else:
             print("Excelの起動に失敗しました")
             

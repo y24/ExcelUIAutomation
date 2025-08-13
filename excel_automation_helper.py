@@ -619,6 +619,9 @@ class ExcelUIAutomation:
     def exit_excel(self):
         """Excelを終了する"""
 
+        # 少し待ってから閉じる
+        time.sleep(ExcelConfig.get_timing('excel_startup'))
+
         try:
             if self.app.is_process_running():
                 self.app.kill()
