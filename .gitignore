@@ -1,2 +1,11 @@
-__pycache__/*
 *.log
+
+# Python cache files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Specific utils directory cache
+utils/__pycache__/
+utils/**/__pycache__/
