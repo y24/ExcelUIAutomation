@@ -110,6 +110,7 @@ class ExcelUIAutomation:
                         excel_dialogs = find_windows(title_re=".*Microsoft Excel.*")
                         for dialog in excel_dialogs:
                             dialog_title = dialog.window_text()
+                            logger.debug(f"検出されたダイアログ: {dialog_title}")
                             if any(pattern.lower() in dialog_title.lower() for pattern in title_patterns):
                                 logger.info(f"ダイアログを検出しました: {dialog_title}")
                                 return True, dialog
@@ -160,6 +161,7 @@ class ExcelUIAutomation:
                 excel_dialogs = find_windows(title_re=".*Microsoft Excel.*")
                 for dialog in excel_dialogs:
                     dialog_title = dialog.window_text()
+                    logger.debug(f"検出されたダイアログ: {dialog_title}")
                     if any(pattern.lower() in dialog_title.lower() for pattern in title_patterns):
                         logger.info(f"ダイアログが表示されています: {dialog_title}")
                         return True, dialog
@@ -203,20 +205,11 @@ class ExcelUIAutomation:
             except Exception as e:
                 logger.debug(f"ダイアログアクティベートエラー: {e}")
             
-            # アクションに応じたキーを送信
-            if action == 'yes':
-                send_keys('y')
-            elif action == 'no':
-                send_keys('n')
-            elif action == 'ok':
-                send_keys('{ENTER}')
-            elif action == 'cancel':
-                send_keys('{ESC}')
-            elif action == 'enable':
-                send_keys('{ENTER}')  # 保護ビューの編集有効化
-            else:
-                # カスタムアクションの場合は直接テキストを送信
-                send_keys(action)
+            # ダイアログが完全に表示されるまで少し待機
+            time.sleep(1.0)
+            
+            # アクションに応じたキーを送信（キーを直接渡す）
+            send_keys(action)
             
             time.sleep(ExcelConfig.get_timing('dialog_wait', 0.5))
             logger.info(f"ダイアログの処理が完了しました")
@@ -244,10 +237,10 @@ class ExcelUIAutomation:
                 title_patterns = config.get('title_patterns', [])
                 action = config.get('action', 'ok')
                 
-                if self.is_dialog_present(title_patterns):
-                    if not self.handle_dialog(title_patterns, action, timeout):
-                        success = False
-                        logger.warning(f"ダイアログの処理に失敗しました (パターン: {title_patterns})")
+                # ダイアログの表示を待機してから処理
+                if not self.handle_dialog(title_patterns, action, timeout):
+                    success = False
+                    logger.warning(f"ダイアログの処理に失敗しました (パターン: {title_patterns})")
             
             return success
             
@@ -608,8 +601,8 @@ class ExcelUIAutomation:
                 logger.info("ワークブックを閉じました")
                 
                 # さらに確実に閉じるため、Alt+F4 を使用
-                send_keys('%{F4}')
-                time.sleep(ExcelConfig.get_timing('file_operation'))
+                # send_keys('%{F4}')
+                # time.sleep(ExcelConfig.get_timing('file_operation'))
                 
                 # それでも残っている場合は強制終了
                 # try:
@@ -768,7 +761,7 @@ def main():
             # 単一のダイアログタイトルパターンをチェック
             if excel_auto.is_dialog_present("新しい名前"):
                 print("名前の定義ダイアログが表示されています。キャンセルします")
-                excel_auto.handle_dialog("新しい名前", "cancel")
+                excel_auto.handle_dialog("新しい名前", "{ESC}")
             
             print("セルA2にテキストを入力中...")
             # セルA2にテキストを入力
@@ -780,12 +773,12 @@ def main():
 
             # # 複数のダイアログ設定を一括処理
             demo_dialogs = [
-                {'title_patterns': ['保存の確認', 'Save As'], 'action': 'no'},
-                {'title_patterns': ['Microsoft Excel'], 'action': 'yes'},
-                {'title_patterns': ['エラー', 'Error'], 'action': 'ok'}
+                {'title_patterns': ['保存の確認', 'Save As'], 'action': 'n'},
+                {'title_patterns': ['Microsoft Excel'], 'action': 's'},
+                {'title_patterns': ['エラー', 'Error'], 'action': '{ENTER}'}
             ]
             print("保存ダイアログが表示されています。ファイルを保存します")
-            excel_auto.wait_and_handle_dialogs(demo_dialogs)
+            excel_auto.wait_and_handle_dialogs(demo_dialogs, timeout=15)
             
             print("処理が完了しました")
             # 少し待ってから閉じる

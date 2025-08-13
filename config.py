@@ -70,7 +70,7 @@ class ExcelConfig:
     
     # ログ設定
     LOGGING = {
-        'level': 'INFO',
+        'level': 'DEBUG',
         'format': '%(asctime)s - %(levelname)s - %(message)s',
         'file': 'excel_automation.log',
     }
