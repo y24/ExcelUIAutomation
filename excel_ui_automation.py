@@ -313,21 +313,6 @@ class ExcelUIAutomation:
         except Exception as e:
             logger.error(f"ペーストエラー: {e}")
             return False
-    
-    def insert_formula(self, formula):
-        """数式を挿入"""
-        try:
-            send_keys('=')
-            time.sleep(ExcelConfig.get_timing('text_input'))
-            send_keys(formula)
-            time.sleep(ExcelConfig.get_timing('text_input'))
-            send_keys('{ENTER}')
-            logger.info(f"数式を挿入しました: {formula}")
-            return True
-            
-        except Exception as e:
-            logger.error(f"数式挿入エラー: {e}")
-            return False
 
     def click_ribbon_shortcut(self, shortcut_key):
         """短縮キー形式でリボン操作を実行（例: "H>AC" でホームタブの中央揃え）"""
@@ -413,7 +398,7 @@ def main():
             print("セルB1に数式を入力中...")
             # セルB1に数式を入力
             excel_auto.select_cell(0, 1)  # B1
-            excel_auto.insert_formula("=A1")
+            excel_auto.input_text("=A1")
             
             print("セルC1に数値を入力中...")
             # セルC1に数値を入力
@@ -424,7 +409,8 @@ def main():
             print("データタブをクリック中...")
             excel_auto.click_ribbon_shortcut("A")
 
-            print("ホーム > 太字を実行中...")
+            print("ホーム > 中央揃えを実行中...")
+            excel_auto.select_cell(0, 2)  # C1
             excel_auto.click_ribbon_shortcut("H>AC")
             
             print("ファイルを保存中...")
