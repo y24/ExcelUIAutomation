@@ -63,6 +63,44 @@ class ExcelAutomationHelper:
         self.workbook = None
         self.copied_files = []  # コピーしたファイルのパスを記録
         
+    def wait_for_excel_window(self, timeout=None, check_interval=None):
+        """
+        Excelウィンドウが表示されるまで動的に待機
+        
+        Args:
+            timeout (float): 最大待機時間（秒）（Noneの場合は設定ファイルの値を使用）
+            check_interval (float): チェック間隔（秒）（Noneの場合は設定ファイルの値を使用）
+            
+        Returns:
+            bool: ウィンドウが見つかったかどうか
+        """
+        if timeout is None:
+            timeout = ExcelConfig.get_timing('window_wait', 10)
+        if check_interval is None:
+            check_interval = 0.5
+            
+        logger.info(f"Excelウィンドウの表示を待機中... (タイムアウト: {timeout}秒)")
+        
+        process_name = ExcelConfig.get_excel_setting('process_name')
+        elapsed_time = 0
+        
+        while elapsed_time < timeout:
+            try:
+                window_handle = find_window(process=process_name)
+                if window_handle:
+                    self.excel_window = self.app.window(handle=window_handle)
+                    # ウィンドウが実際に表示されているかチェック
+                    if self.excel_window.is_visible():
+                        logger.info(f"Excelウィンドウを検出しました（{elapsed_time:.1f}秒後）")
+                        return True
+            except Exception as e:
+                logger.debug(f"ウィンドウ検索中（{elapsed_time:.1f}秒）: {e}")
+            
+            time.sleep(check_interval)
+            elapsed_time += check_interval
+        
+        return False
+    
     def wait_for_dialog(self, title_patterns, timeout=None, check_interval=None):
         """
         指定されたタイトルパターンに一致するダイアログが表示されるまで待機
@@ -445,25 +483,19 @@ class ExcelAutomationHelper:
                 self.app = Application().start(valid_excel_path)
                 logger.info("新しいExcelを起動しました")
             
-            # Excelウィンドウが表示されるまで待機
-            time.sleep(ExcelConfig.get_timing('excel_startup'))
-            
-            # メインウィンドウを取得（プロセス名を使用）
-            process_name = ExcelConfig.get_excel_setting('process_name')
-            # プロセス名でウィンドウを検索
-            try:
-                from pywinauto.findwindows import find_window
-                window_handle = find_window(process=process_name)
-                if window_handle:
-                    self.excel_window = self.app.window(handle=window_handle)
-                else:
+            # Excelウィンドウが表示されるまで動的に待機
+            if not self.wait_for_excel_window():
+                logger.warning("プロセス名でのウィンドウ検索に失敗、タイトルパターンを使用")
+                try:
                     # フォールバック: タイトルパターンを使用
                     self.excel_window = self.app.window(title_re=ExcelConfig.get_excel_setting('window_title_pattern'))
-            except Exception as e:
-                logger.debug(f"プロセス名でのウィンドウ検索に失敗、タイトルパターンを使用: {e}")
-                # フォールバック: タイトルパターンを使用
-                self.excel_window = self.app.window(title_re=ExcelConfig.get_excel_setting('window_title_pattern'))
+                    self.excel_window.wait('visible', timeout=5)
+                    logger.info("タイトルパターンでExcelウィンドウを検出しました")
+                except Exception as e:
+                    logger.error(f"タイトルパターンでのウィンドウ検索にも失敗: {e}")
+                    raise Exception("Excelウィンドウを検出できませんでした")
             
+            # ウィンドウが完全に表示されるまで待機
             self.excel_window.wait('visible', timeout=ExcelConfig.get_timing('window_wait'))
             
             return True
@@ -474,9 +506,6 @@ class ExcelAutomationHelper:
             import traceback
             traceback.print_exc()
             return False
-        finally:
-            # 少し待ってから開始する
-            time.sleep(ExcelConfig.get_timing('excel_startup'))
     
     def open_file(self, file_path):
         """ファイルを開く"""

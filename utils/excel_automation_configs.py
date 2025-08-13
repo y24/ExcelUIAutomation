@@ -27,6 +27,7 @@ class ExcelConfig:
     # Excel関連設定
     EXCEL = {
         'process_name': 'excel.exe',
+        'window_title_pattern': r'.*Excel.*',  # Excelウィンドウのタイトルパターン
     }
     
     # キーボードショートカット
