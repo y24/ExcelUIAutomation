@@ -7,23 +7,20 @@ def main():
     
     try:
         print("Excelを起動中...")
-        # Excelを起動
         if excel.start_excel("templates/demo.xlsx"):
             print("Excelが正常に起動しました")
             
             print("===== セル操作のデモ =====")
+
             print("セルA1にテキストを入力中...")
-            # セルA1にテキストを入力
             excel.select_cell(0, 0)  # A1
             excel.input_text("Hello Excel!")
             
             print("セルB1に数式を入力中...")
-            # セルB1に数式を入力
             excel.select_cell(0, 1)  # B1
             excel.input_text("=A1")
             
             print("セルC1に数値を入力中...")
-            # セルC1に数値を入力
             excel.select_cell(0, 2)  # C1
             excel.input_text("1000")
             
@@ -36,16 +33,15 @@ def main():
             excel.click_ribbon_shortcut("H>AC")
 
             print("ファイルを保存中...")
-            # ファイルを保存
             excel.save_file()
 
             print("===== ダイアログ処理機能のデモ =====")
 
-            # print("名前の定義ダイアログを表示中...")
+            print("名前の定義ダイアログを表示中...")
             excel.click_ribbon_shortcut("M>M>D")
             
             # ダイアログを待機して処理する例
-            print("'新しい名前'ダイアログが表示されるまで待機します")
+            print("'新しい名前'ダイアログが表示されるまで待機します...")
             dialog_found, dialog_window = excel.wait_for_dialog("新しい名前", timeout=10)
             if dialog_found:
                 print("'新しい名前'ダイアログが表示されました。キャンセルします")
@@ -54,19 +50,18 @@ def main():
                 print("タイムアウト: ダイアログが表示されませんでした")
 
             print("セルA2にテキストを入力中...")
-            # セルA2にテキストを入力
             excel.select_cell(1, 0)  # A2
             excel.input_text("保存ダイアログの表示確認用")
 
             print("ワークブックを閉じます")
             excel.close_workbook()
 
-            # 保存ダイアログの処理
+            # 複数ダイアログを処理する例
             dialog_sequence = [
                 {'title_patterns': ['保存の確認', 'Save As', 'Microsoft Excel'], 'key_action': 's'}, #保存ダイアログでsキーを押下
                 {'title_patterns': ['エラー', 'Error'], 'key_action': '{ENTER}'}  #複数のダイアログが連続して出る場合はこのように記述
             ]
-            print("保存ダイアログが表示されるので、ファイルを保存します")
+            print("保存確認ダイアログの保存ボタンを実行します")
             excel.wait_and_handle_dialogs(dialog_sequence)
             
             print("処理が完了しました")
