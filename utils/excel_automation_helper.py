@@ -322,20 +322,27 @@ class ExcelAutomationHelper:
                         import win32gui
                         import win32con
                         
-                        def enum_windows_callback(hwnd, target_title):
+                        def enum_windows_callback(hwnd, target_process):
                             if win32gui.IsWindowVisible(hwnd):
-                                window_title = win32gui.GetWindowText(hwnd)
-                                if target_title.lower() in window_title.lower():
-                                    win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)
-                                    time.sleep(ExcelConfig.get_timing('window_activation'))
-                                    win32gui.SetForegroundWindow(hwnd)
-                                    time.sleep(ExcelConfig.get_timing('window_activation'))
-                                    return False  # 列挙を停止
+                                try:
+                                    import win32process
+                                    _, process_id = win32process.GetWindowThreadProcessId(hwnd)
+                                    import psutil
+                                    process = psutil.Process(process_id)
+                                    if process.name().lower() == target_process.lower():
+                                        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)
+                                        time.sleep(ExcelConfig.get_timing('window_activation'))
+                                        win32gui.SetForegroundWindow(hwnd)
+                                        time.sleep(ExcelConfig.get_timing('window_activation'))
+                                        return False  # 列挙を停止
+                                except Exception as e:
+                                    logger.debug(f"プロセス情報取得エラー: {e}")
                             return True
                         
-                        # Excelウィンドウを検索してアクティベート
-                        win32gui.EnumWindows(enum_windows_callback, "Excel")
-                        logger.info("ウィンドウタイトル検索でExcelウィンドウをアクティベートしました")
+                        # Excelプロセスでウィンドウを検索してアクティベート
+                        process_name = ExcelConfig.get_excel_setting('process_name')
+                        win32gui.EnumWindows(enum_windows_callback, process_name)
+                        logger.info("プロセス名検索でExcelウィンドウをアクティベートしました")
                         return True
                     except Exception as e:
                         logger.debug(f"ウィンドウタイトル検索でのアクティベートに失敗: {e}")
@@ -441,8 +448,22 @@ class ExcelAutomationHelper:
             # Excelウィンドウが表示されるまで待機
             time.sleep(ExcelConfig.get_timing('excel_startup'))
             
-            # メインウィンドウを取得
-            self.excel_window = self.app.window(title_re=ExcelConfig.get_excel_setting('window_title_pattern'))
+            # メインウィンドウを取得（プロセス名を使用）
+            process_name = ExcelConfig.get_excel_setting('process_name')
+            # プロセス名でウィンドウを検索
+            try:
+                from pywinauto.findwindows import find_window
+                window_handle = find_window(process=process_name)
+                if window_handle:
+                    self.excel_window = self.app.window(handle=window_handle)
+                else:
+                    # フォールバック: タイトルパターンを使用
+                    self.excel_window = self.app.window(title_re=ExcelConfig.get_excel_setting('window_title_pattern'))
+            except Exception as e:
+                logger.debug(f"プロセス名でのウィンドウ検索に失敗、タイトルパターンを使用: {e}")
+                # フォールバック: タイトルパターンを使用
+                self.excel_window = self.app.window(title_re=ExcelConfig.get_excel_setting('window_title_pattern'))
+            
             self.excel_window.wait('visible', timeout=ExcelConfig.get_timing('window_wait'))
             
             return True
