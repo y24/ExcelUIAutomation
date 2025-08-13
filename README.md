@@ -4,7 +4,7 @@ WindowsでExcel操作をUI自動化するためのPythonプロジェクトです
 
 ## 機能
 
-### 基本機能 (`excel_ui_automation.py`)
+### 基本機能 (`excel_automation_helper.py`)
 - Excelの起動・終了
 - ファイルの開く・保存
 - セルの選択・入力
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 ### 基本的な使用例
 
 ```python
-from excel_ui_automation import ExcelUIAutomation
+from excel_automation_helper import ExcelUIAutomation
 
 # Excel自動化オブジェクトを作成
 excel_auto = ExcelUIAutomation()
@@ -85,7 +85,7 @@ excel_auto.close_excel()
 ### 柔軟なダイアログ処理機能の使用例
 
 ```python
-from excel_ui_automation import ExcelUIAutomation
+from excel_automation_helper import ExcelUIAutomation
 
 excel_auto = ExcelUIAutomation()
 
@@ -140,7 +140,7 @@ if excel_auto.connect_to_existing_excel():
 
 ### 基本スクリプトの実行
 ```bash
-python excel_ui_automation.py
+python excel_automation_helper.py
 ```
 
 ### 高度なスクリプトの実行
