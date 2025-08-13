@@ -181,13 +181,13 @@ class ExcelUIAutomation:
             logger.error(f"ダイアログ存在確認エラー: {e}")
             return False, None
     
-    def handle_dialog(self, title_patterns, action='ok', timeout=10):
+    def handle_dialog(self, title_patterns, key_action='{ESC}', timeout=10):
         """
         ダイアログを処理する（表示を待機してから適切なアクションを実行）
         
         Args:
             title_patterns (str or list): ダイアログタイトルのパターン（文字列またはリスト）
-            action (str): 実行するアクション（'ok', 'cancel', 'yes', 'no', 'enable'）
+            key_action (str): 実行するキー操作
             timeout (float): ダイアログ表示待機時間（秒）
             
         Returns:
@@ -202,7 +202,7 @@ class ExcelUIAutomation:
                 return True  # ダイアログが表示されない場合は成功とみなす
             
             # アクションを実行
-            logger.info(f"ダイアログでアクション '{action}' を実行")
+            logger.info(f"ダイアログでアクション '{key_action}' を実行")
             
             # ダイアログをアクティブにする
             try:
@@ -215,8 +215,8 @@ class ExcelUIAutomation:
             # ダイアログが完全に表示されるまで少し待機
             time.sleep(ExcelConfig.get_timing('dialog_wait'))
             
-            # アクションに応じたキーを送信（キーを直接渡す）
-            send_keys(action)
+            # アクションに応じたキーを送信
+            send_keys(key_action)
             
             time.sleep(ExcelConfig.get_timing('dialog_wait', 0.5))
             logger.info(f"ダイアログの処理が完了しました")
@@ -232,7 +232,7 @@ class ExcelUIAutomation:
         
         Args:
             dialog_configs (list): ダイアログ設定のリスト
-                [{'title_patterns': ['パターン1', 'パターン2'], 'action': 'ok'}, ...]
+                [{'title_patterns': ['パターン1', 'パターン2'], 'key_action': '{ESC}'}, ...]
             timeout (float): 各ダイアログの待機時間（秒）
             
         Returns:
@@ -242,10 +242,10 @@ class ExcelUIAutomation:
             success = True
             for config in dialog_configs:
                 title_patterns = config.get('title_patterns', [])
-                action = config.get('action', 'ok')
+                key_action = config.get('key_action', '')
                 
                 # ダイアログの表示を待機してから処理
-                if not self.handle_dialog(title_patterns, action, timeout):
+                if not self.handle_dialog(title_patterns, key_action, timeout):
                     success = False
                     logger.warning(f"ダイアログの処理に失敗しました (パターン: {title_patterns})")
             
@@ -595,51 +595,45 @@ class ExcelUIAutomation:
             logger.error(f"ダイアログ閉じるエラー: {e}")
             return False
 
-    def close_excel(self):
-        """Excelを閉じる"""
+    def close_workbook(self):
+        """ワークブックを閉じる"""
         try:
             if self.app:
                 # Excelウィンドウをアクティベート
-                self.ensure_excel_active("Excelを閉じる")
+                self.ensure_excel_active("ワークブックを閉じる")
                 
                 # 正常にExcelを閉じる（Ctrl+W でワークブックを閉じる）
                 send_keys(ExcelConfig.get_shortcut('close_workbook'))
                 time.sleep(ExcelConfig.get_timing('file_operation'))
                 logger.info("ワークブックを閉じました")
                 
-                # さらに確実に閉じるため、Alt+F4 を使用
-                # send_keys('%{F4}')
-                # time.sleep(ExcelConfig.get_timing('file_operation'))
-                
-                # それでも残っている場合は強制終了
-                # try:
-                #     if self.app.is_process_running():
-                #         self.app.kill()
-                #         logger.info("Excelを終了しました")
-                #     else:
-                #         pass
-                # except:
-                #     self.app.kill()
-                #     logger.info("Excelを終了しました")
-                
-                # 復旧ファイルを削除
-                self._cleanup_recovery_files()
-                
             return True
             
         except Exception as e:
             logger.error(f"Excel終了エラー: {e}")
             # エラーが発生した場合は強制終了
-            try:
-                if self.app:
-                    self.app.kill()
-            except:
-                pass
+            self.exit_excel()
             # エラーが発生しても復旧ファイルは削除
             self._cleanup_recovery_files()
             # エラー時はコピーしたファイルもクリーンナップ
             self._cleanup_copied_files()
             return False
+
+    def exit_excel(self):
+        """Excelを終了する"""
+
+        try:
+            if self.app.is_process_running():
+                self.app.kill()
+                logger.info("Excelを終了しました")
+            else:
+                pass
+        except:
+            self.app.kill()
+            logger.info("Excelを終了しました")
+
+        # 復旧ファイルを削除
+        self._cleanup_recovery_files()
     
     def _cleanup_recovery_files(self):
         """復旧ファイルを削除"""
@@ -731,32 +725,35 @@ def main():
             print("Excelが正常に起動しました")
             time.sleep(ExcelConfig.get_timing('excel_startup'))
             
-            # ===== セル操作のデモ =====
-            # print("セルA1にテキストを入力中...")
-            # # セルA1にテキストを入力
-            # excel_auto.select_cell(0, 0)  # A1
-            # excel_auto.input_text("Hello Excel!")
+            print("===== セル操作のデモ =====")
+            print("セルA1にテキストを入力中...")
+            # セルA1にテキストを入力
+            excel_auto.select_cell(0, 0)  # A1
+            excel_auto.input_text("Hello Excel!")
             
-            # print("セルB1に数式を入力中...")
-            # # セルB1に数式を入力
-            # excel_auto.select_cell(0, 1)  # B1
-            # excel_auto.input_text("=A1")
+            print("セルB1に数式を入力中...")
+            # セルB1に数式を入力
+            excel_auto.select_cell(0, 1)  # B1
+            excel_auto.input_text("=A1")
             
-            # print("セルC1に数値を入力中...")
-            # # セルC1に数値を入力
-            # excel_auto.select_cell(0, 2)  # C1
-            # excel_auto.input_text("1000")
+            print("セルC1に数値を入力中...")
+            # セルC1に数値を入力
+            excel_auto.select_cell(0, 2)  # C1
+            excel_auto.input_text("1000")
             
-            # ===== リボン操作のデモ =====
-            # print("データタブをクリック中...")
-            # excel_auto.click_ribbon_shortcut("A")
+            print("===== リボン操作のデモ =====")
+            print("データタブをクリック中...")
+            excel_auto.click_ribbon_shortcut("A")
 
-            # print("ホーム > 中央揃えを実行中...")
-            # excel_auto.select_cell(0, 2)  # C1
-            # excel_auto.click_ribbon_shortcut("H>AC")
-            
-            # ===== ダイアログ処理機能のデモ =====
-            print("ダイアログ処理機能のデモ...")
+            print("ホーム > 中央揃えを実行中...")
+            excel_auto.select_cell(0, 2)  # C1
+            excel_auto.click_ribbon_shortcut("H>AC")
+
+            print("ファイルを保存中...")
+            # ファイルを保存
+            excel_auto.save_file()
+
+            print("===== ダイアログ処理機能のデモ =====")
 
             print("名前の定義ダイアログを表示中...")
             excel_auto.click_ribbon_shortcut("M>M>D")
@@ -764,28 +761,24 @@ def main():
             # 単一のダイアログタイトルパターンをチェック
             dialog_found, dialog_window = excel_auto.is_dialog_present("新しい名前")
             if dialog_found:
-                print("名前の定義ダイアログが表示されています。キャンセルします")
+                print("新しい名前という名前のダイアログが表示されています。キャンセルします")
                 excel_auto.handle_dialog("新しい名前", "{ESC}")
-            
-            print("ファイルを保存中...")
-            # ファイルを保存
-            excel_auto.save_file()
 
             print("セルA2にテキストを入力中...")
             # セルA2にテキストを入力
             excel_auto.select_cell(1, 0)  # A2
-            excel_auto.input_text("保存ダイアログの表示")
+            excel_auto.input_text("保存ダイアログの表示確認用")
 
-            print("Excelを閉じます")
-            excel_auto.close_excel()
+            print("ワークブックを閉じます")
+            excel_auto.close_workbook()
 
-            # # 複数のダイアログ設定を一括処理
+            # 保存ダイアログの処理
             dialog_sequence = [
-                {'title_patterns': ['保存の確認', 'Save As', 'Microsoft Excel'], 'action': 's'},
-                {'title_patterns': ['エラー', 'Error'], 'action': '{ENTER}'}
+                {'title_patterns': ['保存の確認', 'Save As', 'Microsoft Excel'], 'key_action': 's'}, #保存ダイアログでsキーを押下
+                {'title_patterns': ['エラー', 'Error'], 'key_action': '{ENTER}'}  #複数のダイアログが連続して出る場合はこのように記述
             ]
-            print("保存ダイアログが表示されているため、ファイルを保存します")
-            excel_auto.wait_and_handle_dialogs(dialog_sequence, timeout=15)
+            print("保存ダイアログが表示されている場合、ファイルを保存します")
+            excel_auto.wait_and_handle_dialogs(dialog_sequence)
             
             print("処理が完了しました")
             # 少し待ってから閉じる
@@ -802,7 +795,8 @@ def main():
         print("また、管理者権限で実行してみてください。")
     
     finally:
-        # excel_auto.close_excel()
+        # Excelを終了
+        excel_auto.exit_excel()
         pass
 
 if __name__ == "__main__":
