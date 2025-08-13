@@ -1,4 +1,3 @@
-import time
 import logging
 from utils.excel_automation_helper import ExcelUIAutomation
 
@@ -68,7 +67,7 @@ def main():
                 {'title_patterns': ['エラー', 'Error'], 'key_action': '{ENTER}'}  #複数のダイアログが連続して出る場合はこのように記述
             ]
             print("保存ダイアログが表示されている場合、ファイルを保存します")
-            excel_auto.wait_and_handle_dialogs(dialog_sequence, timeout=3)
+            excel_auto.wait_and_handle_dialogs(dialog_sequence)
             
             print("処理が完了しました")
         else:
@@ -79,8 +78,6 @@ def main():
         print("詳細なエラー情報:")
         import traceback
         traceback.print_exc()
-        print("\nExcelがインストールされているか、または正しく起動できるか確認してください。")
-        print("また、管理者権限で実行してみてください。")
     
     finally:
         # Excelを終了
