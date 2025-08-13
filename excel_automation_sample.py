@@ -84,6 +84,7 @@ def main():
     
     finally:
         # Excelを終了
+        print("Excelを終了します")
         excel_auto.exit_excel()
         pass
 
