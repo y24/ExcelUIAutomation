@@ -21,10 +21,7 @@ class ExcelConfig:
         'dialog_wait': 1,        # ダイアログ待機時間
         'dialog_check_interval': 0.5, # ダイアログチェック間隔
         'dialog_timeout': 10,    # ダイアログ待機タイムアウト
-        'format_operation': 1.0, # 書式設定待機時間
-        'chart_creation': 2,     # グラフ作成待機時間
-        'print_preview': 2,      # 印刷プレビュー待機時間
-        'ribbon_operation': 1.5, # リボン操作待機時間
+        'ribbon_operation': 1, # リボン操作待機時間
     }
     
     # Excel関連設定
@@ -39,25 +36,11 @@ class ExcelConfig:
         'save_file': '^s',           # Ctrl+S
         'save_as': '^+s',            # Ctrl+Shift+S
         'close_workbook': '^w',      # Ctrl+W
-        'copy': '^c',                # Ctrl+C
-        'paste': '^v',               # Ctrl+V
-        'cut': '^x',                 # Ctrl+X
-        'undo': '^z',                # Ctrl+Z
-        'redo': '^y',                # Ctrl+Y
         'find': '^f',                # Ctrl+F
-        'replace': '^h',             # Ctrl+H
         'select_all': '^a',          # Ctrl+A
         'go_to': '^g',               # Ctrl+G
-        'bold': '^b',                # Ctrl+B
-        'italic': '^i',              # Ctrl+I
-        'underline': '^u',           # Ctrl+U
-        'format_cells': '^1',        # Ctrl+1
         'insert_row': '^+{+}',       # Ctrl+Shift++
         'delete_row': '^-',          # Ctrl+-
-        'filter': '^+l',             # Ctrl+Shift+L
-        'chart': '{F11}',            # F11
-        'print_preview': '^f2',      # Ctrl+F2
-        'comment': '+f2',            # Shift+F2
     }
     
     # セル参照設定

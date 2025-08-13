@@ -68,7 +68,7 @@ def main():
                 {'title_patterns': ['エラー', 'Error'], 'key_action': '{ENTER}'}  #複数のダイアログが連続して出る場合はこのように記述
             ]
             print("保存ダイアログが表示されている場合、ファイルを保存します")
-            excel_auto.wait_and_handle_dialogs(dialog_sequence)
+            excel_auto.wait_and_handle_dialogs(dialog_sequence, timeout=3)
             
             print("処理が完了しました")
         else:

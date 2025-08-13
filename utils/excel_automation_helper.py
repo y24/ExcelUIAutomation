@@ -205,7 +205,7 @@ class ExcelUIAutomation:
             try:
                 if dialog_window:
                     dialog_window.set_focus()
-                    time.sleep(ExcelConfig.get_timing('dialog_wait', 0.5))
+                    time.sleep(ExcelConfig.get_timing('dialog_wait', 0.2))
             except Exception as e:
                 logger.debug(f"ダイアログアクティベートエラー: {e}")
             
@@ -215,7 +215,7 @@ class ExcelUIAutomation:
             # アクションに応じたキーを送信
             send_keys(key_action)
             
-            time.sleep(ExcelConfig.get_timing('dialog_wait', 0.5))
+            time.sleep(ExcelConfig.get_timing('dialog_wait', 0.2))
             logger.info(f"ダイアログの処理が完了しました")
             return True
                 
@@ -621,10 +621,6 @@ class ExcelUIAutomation:
 
     def exit_excel(self):
         """Excelを終了する"""
-
-        # 少し待ってから閉じる
-        time.sleep(ExcelConfig.get_timing('excel_startup'))
-
         try:
             if self.app.is_process_running():
                 self.app.kill()
