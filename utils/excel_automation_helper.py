@@ -85,19 +85,20 @@ class ExcelAutomationHelper:
         elapsed_time = 0
         
         while elapsed_time < timeout:
-            try:
-                window_handle = find_window(process=process_name)
-                if window_handle:
-                    self.excel_window = self.app.window(handle=window_handle)
-                    # ウィンドウが実際に表示されているかチェック
-                    if self.excel_window.is_visible():
-                        logger.info(f"Excelウィンドウを検出しました（{elapsed_time:.1f}秒後）")
-                        return True
-            except Exception as e:
-                logger.debug(f"ウィンドウ検索中（{elapsed_time:.1f}秒）: {e}")
-            
-            time.sleep(check_interval)
-            elapsed_time += check_interval
+             try:
+                 window_handle = find_window(process=process_name)
+                 if window_handle:
+                     self.excel_window = self.app.window(handle=window_handle)
+                     # ウィンドウが実際に表示されているかチェック
+                     if self.excel_window.is_visible():
+                         logger.info(f"Excelウィンドウを検出しました（{elapsed_time:.1f}秒後）")
+                         # ウィンドウが検出されたら、すぐに返す（追加の待機なし）
+                         return True
+             except Exception as e:
+                 logger.debug(f"ウィンドウ検索中（{elapsed_time:.1f}秒）: {e}")
+             
+             time.sleep(check_interval)
+             elapsed_time += check_interval
         
         return False
     
@@ -495,8 +496,8 @@ class ExcelAutomationHelper:
                     logger.error(f"タイトルパターンでのウィンドウ検索にも失敗: {e}")
                     raise Exception("Excelウィンドウを検出できませんでした")
             
-            # ウィンドウが完全に表示されるまで待機
-            self.excel_window.wait('visible', timeout=ExcelConfig.get_timing('window_wait'))
+            # ウィンドウが既に検出されているため、追加の待機は不要
+            logger.info("Excelウィンドウの準備が完了しました")
             
             return True
             

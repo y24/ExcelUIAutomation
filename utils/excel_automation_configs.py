@@ -13,7 +13,7 @@ class ExcelConfig:
     # タイミング設定（秒）
     TIMING = {
         'excel_startup': 3,      # Excel起動待機時間
-        'window_wait': 10,       # ウィンドウ表示待機時間
+        'window_wait': 5,        # ウィンドウ表示待機時間（短縮）
         'window_activation': 0.5, # ウィンドウアクティベーション待機時間
         'cell_selection': 0.5,   # セル選択待機時間
         'text_input': 0.5,       # テキスト入力待機時間
