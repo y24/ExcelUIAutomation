@@ -546,7 +546,7 @@ class ExcelUIAutomation:
             return False
 
     def click_ribbon_shortcut(self, shortcut_key):
-        """短縮キー形式でリボン操作を実行（例: "H>AC" でホームタブの中央揃え）"""
+        """短縮キー形式でリボン操作を実行（例: "H>AC" でホームタブの中央揃え、"M>M>D" で数式タブ>名前の定義>名前の定義）"""
         try:
             # Excelウィンドウをアクティベート
             self.ensure_excel_active("リボン操作")
@@ -557,24 +557,15 @@ class ExcelUIAutomation:
             
             # 短縮キーの形式を解析
             if '>' in shortcut_key:
-                parts = shortcut_key.split('>')
-                if len(parts) == 2:
-                    tab_shortcut = parts[0].strip()
-                    button_shortcut = parts[1].strip()
-                    
-                    # タブの短縮キーを送信
-                    send_keys(tab_shortcut.upper())
+                parts = [part.strip().upper() for part in shortcut_key.split('>')]
+                
+                # 各段階の短縮キーを順次送信
+                for i, key in enumerate(parts):
+                    send_keys(key)
                     time.sleep(ExcelConfig.get_timing('ribbon_operation'))
-                    
-                    # ボタンの短縮キーを送信
-                    send_keys(button_shortcut.upper())
-                    time.sleep(ExcelConfig.get_timing('ribbon_operation'))
-                    
-                    logger.info(f"リボン短縮キー '{shortcut_key}' を実行しました")
-                    return True
-                else:
-                    logger.error(f"無効な短縮キー形式: {shortcut_key}")
-                    return False
+                
+                logger.info(f"リボン短縮キー '{shortcut_key}' を実行しました")
+                return True
             else:
                 # タブのみの短縮キーの場合
                 send_keys(shortcut_key.upper())
@@ -771,27 +762,30 @@ def main():
             # ===== ダイアログ処理機能のデモ =====
             print("ダイアログ処理機能のデモ...")
 
+            print("名前の定義ダイアログを表示中...")
             excel_auto.click_ribbon_shortcut("M>M>D")
 
             # 単一のダイアログタイトルパターンをチェック
             if excel_auto.is_dialog_present("新しい名前"):
-                print("Microsoft Excelダイアログが表示されています")
-                excel_auto.handle_dialog("Microsoft Excel", "cancel")
+                print("名前の定義ダイアログが表示されています。キャンセルします")
+                excel_auto.handle_dialog("新しい名前", "cancel")
             
-            # # 複数のダイアログタイトルパターンをチェック
-            # dialog_found, dialog_window = excel_auto.wait_for_dialog(["Microsoft Excel"], timeout=5)
-            # if dialog_found:
-            #     print("Microsoft Excelダイアログを検出しました")
-            #     excel_auto.handle_dialog(["Microsoft Excel"], "ok")
-            
+            print("セルA2にテキストを入力中...")
+            # セルA2にテキストを入力
+            excel_auto.select_cell(1, 0)  # A2
+            excel_auto.input_text("保存ダイアログの表示")
+
+            print("Excelを閉じます")
+            excel_auto.close_excel()
+
             # # 複数のダイアログ設定を一括処理
-            # demo_dialogs = [
-            #     {'title_patterns': ['保存の確認', 'Save As'], 'action': 'no'},
-            #     {'title_patterns': ['ファイルの上書き確認', 'File Already Exists'], 'action': 'yes'},
-            #     {'title_patterns': ['保護されたビュー', 'Protected View'], 'action': 'enable'},
-            #     {'title_patterns': ['エラー', 'Error'], 'action': 'ok'}
-            # ]
-            # excel_auto.wait_and_handle_dialogs(demo_dialogs)
+            demo_dialogs = [
+                {'title_patterns': ['保存の確認', 'Save As'], 'action': 'no'},
+                {'title_patterns': ['Microsoft Excel'], 'action': 'yes'},
+                {'title_patterns': ['エラー', 'Error'], 'action': 'ok'}
+            ]
+            print("保存ダイアログが表示されています。ファイルを保存します")
+            excel_auto.wait_and_handle_dialogs(demo_dialogs)
             
             print("処理が完了しました")
             # 少し待ってから閉じる
