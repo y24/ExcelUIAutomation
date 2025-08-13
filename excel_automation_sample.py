@@ -82,10 +82,8 @@ def main():
         traceback.print_exc()
     
     finally:
-        # Excelを終了
         print("Excelを終了します")
         excel.exit_excel()
-        pass
 
 if __name__ == "__main__":
     main()
