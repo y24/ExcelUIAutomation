@@ -645,7 +645,7 @@ class ExcelUIAutomation:
                 os.path.expanduser("~/AppData/Roaming/Microsoft/Excel"),
             ]
             
-            # 復旧ファイルのパターン（より具体的に）
+            # 復旧ファイルのパターン
             recovery_patterns = [
                 "*.xlsx~*",
                 "*.xls~*",
@@ -657,12 +657,8 @@ class ExcelUIAutomation:
             # デスクトップの復旧ファイルのみを削除（より厳密に）
             desktop_path = os.path.expanduser("~/Desktop")
             if os.path.exists(desktop_path):
-                # デスクトップでは、より具体的な復旧ファイルパターンのみを対象とする
+                # デスクトップでは、一時ファイルのみを対象とする
                 desktop_recovery_patterns = [
-                    "*[オリジナル].xlsx",
-                    "*[オリジナル].xls",
-                    "*[Recovered].xlsx",
-                    "*[Recovered].xls",
                     "*~$*.xlsx",
                     "*~$*.xls"
                 ]
