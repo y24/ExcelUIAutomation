@@ -417,7 +417,6 @@ class ExcelUIAutomation:
                     # 保存確認ダイアログの「保存しない」を選択
                     send_keys('n')  # No
                     time.sleep(ExcelConfig.get_timing('dialog_wait'))
-                    logger.info("保存確認ダイアログを閉じました")
                 except:
                     pass
                 
@@ -429,12 +428,12 @@ class ExcelUIAutomation:
                 try:
                     if self.app.is_process_running():
                         self.app.kill()
-                        logger.info("Excelを強制終了しました")
+                        logger.info("Excelを終了しました")
                     else:
-                        logger.info("Excelを正常に閉じました")
+                        pass
                 except:
                     self.app.kill()
-                    logger.info("Excelを強制終了しました")
+                    logger.info("Excelを終了しました")
                 
                 # 復旧ファイルを削除
                 self._cleanup_recovery_files()
