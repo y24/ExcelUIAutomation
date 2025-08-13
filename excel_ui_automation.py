@@ -309,12 +309,14 @@ class ExcelUIAutomation:
                 # 正常にExcelを閉じる（Ctrl+W でワークブックを閉じる）
                 send_keys(ExcelConfig.get_shortcut('close_workbook'))
                 time.sleep(ExcelConfig.get_timing('file_operation'))
+                logger.info("ワークブックを閉じました")
                 
                 # 保存確認ダイアログが表示された場合の処理
                 try:
                     # 保存確認ダイアログの「保存しない」を選択
                     send_keys('n')  # No
                     time.sleep(ExcelConfig.get_timing('dialog_wait'))
+                    logger.info("保存確認ダイアログを閉じました")
                 except:
                     pass
                 
