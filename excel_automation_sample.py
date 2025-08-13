@@ -1,9 +1,6 @@
 import logging
 from utils.excel_automation_helper import ExcelUIAutomation
 
-# ログ設定
-logger = logging.getLogger(__name__)
-
 def main():
     """メイン実行例"""
     excel_auto = ExcelUIAutomation()
@@ -74,8 +71,10 @@ def main():
             print("Excelの起動に失敗しました")
             
     except Exception as e:
+        # ログ設定
+        logger = logging.getLogger(__name__)
         logger.error(f"実行エラー: {e}")
-        print("詳細なエラー情報:")
+        print("Traceback:")
         import traceback
         traceback.print_exc()
     
