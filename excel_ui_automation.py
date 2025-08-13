@@ -360,6 +360,9 @@ class ExcelUIAutomation:
                 # タブのみの短縮キーの場合
                 send_keys(shortcut_key.upper())
                 time.sleep(ExcelConfig.get_timing('ribbon_operation'))
+                # タブキー送信後、Enterキーで抜ける
+                send_keys('{ENTER}')
+                time.sleep(ExcelConfig.get_timing('ribbon_operation'))
                 logger.info(f"リボンタブ短縮キー '{shortcut_key}' を実行しました")
                 return True
                     
@@ -422,7 +425,7 @@ def main():
             excel_auto.click_ribbon_shortcut("A")
 
             print("ホーム > 太字を実行中...")
-            excel_auto.click_ribbon_shortcut("H>B")
+            excel_auto.click_ribbon_shortcut("H>AC")
             
             print("ファイルを保存中...")
             # ファイルを保存
