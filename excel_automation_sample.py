@@ -41,14 +41,17 @@ def main():
 
             print("===== ダイアログ処理機能のデモ =====")
 
-            print("名前の定義ダイアログを表示中...")
+            # print("名前の定義ダイアログを表示中...")
             excel.click_ribbon_shortcut("M>M>D")
-
-            # 単一のダイアログタイトルパターンをチェック
-            dialog_found, dialog_window = excel.is_dialog_present("新しい名前")
+            
+            # ダイアログを待機して処理する例
+            print("'新しい名前'ダイアログが表示されるまで待機します")
+            dialog_found, dialog_window = excel.wait_for_dialog("新しい名前", timeout=10)
             if dialog_found:
-                print("新しい名前という名前のダイアログが表示されています。キャンセルします")
+                print("'新しい名前'ダイアログが表示されました。キャンセルします")
                 excel.handle_dialog("新しい名前", "{ESC}")
+            else:
+                print("タイムアウト: ダイアログが表示されませんでした")
 
             print("セルA2にテキストを入力中...")
             # セルA2にテキストを入力
