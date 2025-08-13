@@ -66,7 +66,8 @@ excel_auto.exit_excel()
 
 ```python
 # 単一ダイアログの処理
-if excel_auto.is_dialog_present("保存の確認"):
+dialog_found, dialog_window = excel_auto.wait_for_dialog("保存の確認", timeout=10)
+if dialog_found:
     excel_auto.handle_dialog("保存の確認", "no")
 
 # 複数ダイアログの一括処理
