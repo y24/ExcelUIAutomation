@@ -68,7 +68,7 @@ excel_auto.exit_excel()
 # 単一ダイアログの処理
 dialog_found, dialog_window = excel_auto.wait_for_dialog("保存の確認", timeout=10)
 if dialog_found:
-    excel_auto.handle_dialog("保存の確認", "no")
+    excel_auto.handle_dialog("保存の確認", "{ESC}")
 
 # 複数ダイアログの一括処理
 dialog_configs = [
