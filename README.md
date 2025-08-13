@@ -18,10 +18,15 @@ WindowsでExcel操作をUI自動化するためのPythonプロジェクトです
 - **リボン操作機能**
   - リボンタブのクリック（ホーム、挿入、データ、数式、校閲など）
   - リボンボタンのクリック（太字、中央揃え、グラフ、ピボットテーブルなど）
-  - **短縮キー形式でのリボン操作（新機能）** - Configファイルに追記不要
+  - **短縮キー形式でのリボン操作** - Configファイルに追記不要
   - リボンダイアログの開閉（セルの書式設定、条件付き書式など）
   - リボンギャラリーの使用（スタイル、フォント、図形など）
   - リボンコマンドパスでの実行（タブ > グループ > コマンド）
+- **柔軟なダイアログ処理機能（新機能）**
+  - ダイアログタイトルパターンを直接指定（複数指定可）
+  - 保存確認、ファイル上書き確認、エラー、保護ビューなどのダイアログを自動処理
+  - 複数ダイアログの一括処理
+  - カスタマイズ可能なダイアログ設定
 
 ### 高度な機能 (`advanced_excel_automation.py`)
 - 既存のExcelプロセスへの接続
@@ -75,6 +80,38 @@ excel_auto.click_ribbon_button("グラフ", "挿入")
 
 # Excelを閉じる
 excel_auto.close_excel()
+```
+
+### 柔軟なダイアログ処理機能の使用例
+
+```python
+from excel_ui_automation import ExcelUIAutomation
+
+excel_auto = ExcelUIAutomation()
+
+# 単一のダイアログタイトルパターンをチェック
+if excel_auto.is_dialog_present("保存の確認"):
+    print("保存確認ダイアログが表示されています")
+    excel_auto.handle_dialog("保存の確認", "no")
+
+# 複数のダイアログタイトルパターンをチェック
+dialog_found, dialog_window = excel_auto.wait_for_dialog(["エラー", "Error", "警告"], timeout=5)
+if dialog_found:
+    print("エラーダイアログを検出しました")
+    excel_auto.handle_dialog(["エラー", "Error", "警告"], "ok")
+
+# 複数のダイアログ設定を一括処理
+dialog_configs = [
+    {'title_patterns': ['保存の確認', 'Save As'], 'action': 'no'},
+    {'title_patterns': ['ファイルの上書き確認', 'File Already Exists'], 'action': 'yes'},
+    {'title_patterns': ['保護されたビュー', 'Protected View'], 'action': 'enable'},
+    {'title_patterns': ['エラー', 'Error'], 'action': 'ok'}
+]
+excel_auto.wait_and_handle_dialogs(dialog_configs)
+
+# カスタムアクションでのダイアログ処理
+excel_auto.handle_dialog("保存の確認", "yes")  # 保存する
+excel_auto.handle_dialog("ファイルの上書き確認", "no")  # 上書きしない
 ```
 
 ### 高度な使用例
@@ -140,6 +177,12 @@ python advanced_excel_automation.py
    - Excelウィンドウが最小化されていないか確認
    - 他のアプリケーションがウィンドウをブロックしていないか確認
    - 必要に応じて`activate_excel_window()`メソッドのリトライ回数を増やす
+
+5. **ダイアログ処理がうまくいかない**
+   - ダイアログのタイトルパターンが正しく指定されているか確認
+   - タイムアウト時間を適切に設定
+   - ダイアログが表示されるまで十分な待機時間を確保
+   - 複数のタイトルパターンを指定して柔軟性を高める
 
 ### ログの確認
 
@@ -214,6 +257,26 @@ excel_auto.open_format_cells_dialog()    # セルの書式設定ダイアログ�
 - `R` - 校閲
 - `W` - 表示
 - `D` - 開発
+
+### 柔軟なダイアログ処理機能の詳細
+
+#### ダイアログタイトルパターンの指定方法
+- 単一パターン: `"保存の確認"`
+- 複数パターン: `["保存の確認", "Save As", "名前を付けて保存"]`
+- 部分一致: `"エラー"` で "エラー" を含むタイトルを検索
+
+#### 利用可能なアクション
+- `yes` - 「はい」ボタンをクリック
+- `no` - 「いいえ」ボタンをクリック
+- `ok` - 「OK」ボタンをクリック
+- `cancel` - 「キャンセル」ボタンをクリック
+- `enable` - 「編集を有効にする」ボタンをクリック（保護ビュー用）
+
+#### よく使用されるダイアログタイトルパターン例
+- 保存関連: `["保存の確認", "Save As", "名前を付けて保存"]`
+- 上書き確認: `["ファイルの上書き確認", "File Already Exists"]`
+- エラー: `["エラー", "Error", "警告"]`
+- 保護ビュー: `["保護されたビュー", "Protected View"]`
 
 #### ホームタブのボタン例
 - `B` - 太字

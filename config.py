@@ -19,6 +19,8 @@ class ExcelConfig:
         'text_input': 0.5,       # テキスト入力待機時間
         'file_operation': 1,     # ファイル操作待機時間
         'dialog_wait': 1,        # ダイアログ待機時間
+        'dialog_check_interval': 0.5, # ダイアログチェック間隔
+        'dialog_timeout': 10,    # ダイアログ待機タイムアウト
         'format_operation': 1.0, # 書式設定待機時間
         'chart_creation': 2,     # グラフ作成待機時間
         'print_preview': 2,      # 印刷プレビュー待機時間
@@ -81,9 +83,11 @@ class ExcelConfig:
     }
     
     @classmethod
-    def get_timing(cls, key):
+    def get_timing(cls, key, default=None):
         """タイミング設定を取得"""
-        return cls.TIMING.get(key, 1.0)
+        if default is None:
+            return cls.TIMING.get(key, 1.0)
+        return cls.TIMING.get(key, default)
     
     @classmethod
     def get_shortcut(cls, key):
