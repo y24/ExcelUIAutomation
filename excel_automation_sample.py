@@ -15,7 +15,6 @@ def main():
         # Excelを起動
         if excel_auto.start_excel("demo.xlsx"):
             print("Excelが正常に起動しました")
-            time.sleep(ExcelConfig.get_timing('excel_startup'))
             
             print("===== セル操作のデモ =====")
             print("セルA1にテキストを入力中...")

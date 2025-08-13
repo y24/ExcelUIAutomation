@@ -453,6 +453,9 @@ class ExcelUIAutomation:
             import traceback
             traceback.print_exc()
             return False
+        finally:
+            # 少し待ってから開始する
+            time.sleep(ExcelConfig.get_timing('excel_startup'))
     
     def open_file(self, file_path):
         """ファイルを開く"""
