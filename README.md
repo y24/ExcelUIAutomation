@@ -40,10 +40,10 @@ pip install -r requirements.txt
 ### 基本的な使用例
 
 ```python
-from utils.excel_automation_helper import ExcelUIAutomation
+from utils.excel_automation_helper import ExcelAutomationHelper
 
 # Excel自動化オブジェクトを作成
-excel_auto = ExcelUIAutomation()
+excel_auto = ExcelAutomationHelper()
 
 # Excelを起動
 excel_auto.start_excel("templates/demo.xlsx")
@@ -116,7 +116,6 @@ python excel_automation_sample.py
    - システムの性能を考慮して待機時間を調整
 
 3. **リボン操作が動作しない**
-   - Excelの言語設定を確認
    - 短縮キーが正しく指定されているか確認
 
 4. **ダイアログ処理がうまくいかない**
