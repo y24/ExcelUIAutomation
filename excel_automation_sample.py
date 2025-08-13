@@ -1,7 +1,7 @@
 import time
 import logging
 from excel_automation_helper import ExcelUIAutomation
-from config import ExcelConfig
+from excel_automation_configs import ExcelConfig
 
 # ログ設定
 logger = logging.getLogger(__name__)

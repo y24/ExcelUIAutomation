@@ -132,31 +132,6 @@ class ExcelConfig:
         end_cell = cls.get_cell_address(end_row, end_col)
         return f"{start_cell}:{end_cell}"
 
-# 環境固有の設定
-class EnvironmentConfig:
-    """環境固有の設定"""
-    
-    # 開発環境
-    DEVELOPMENT = {
-        'debug_mode': True,
-        'log_level': 'DEBUG',
-        'slow_mode': True,  # デバッグ用に遅く実行
-    }
-    
-    # 本番環境
-    PRODUCTION = {
-        'debug_mode': False,
-        'log_level': 'INFO',
-        'slow_mode': False,
-    }
-    
-    @classmethod
-    def get_config(cls, environment='development'):
-        """環境設定を取得"""
-        if environment.lower() == 'production':
-            return cls.PRODUCTION
-        return cls.DEVELOPMENT
-
 # 使用例
 if __name__ == "__main__":
     # 設定の確認
