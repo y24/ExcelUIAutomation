@@ -41,28 +41,6 @@ def get_excel_path():
     except Exception as e:
         logger.debug(f"Office 16.0からの取得に失敗: {e}")
     
-    try:
-        # Office 2013
-        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Office\15.0\Excel\InstallRoot") as key:
-            path, _ = winreg.QueryValueEx(key, "Path")
-            excel_path = os.path.join(path, "EXCEL.EXE")
-            if os.path.exists(excel_path):
-                logger.info(f"レジストリからExcelパスを取得: {excel_path}")
-                return excel_path
-    except Exception as e:
-        logger.debug(f"Office 15.0からの取得に失敗: {e}")
-    
-    try:
-        # Office 2010
-        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Office\14.0\Excel\InstallRoot") as key:
-            path, _ = winreg.QueryValueEx(key, "Path")
-            excel_path = os.path.join(path, "EXCEL.EXE")
-            if os.path.exists(excel_path):
-                logger.info(f"レジストリからExcelパスを取得: {excel_path}")
-                return excel_path
-    except Exception as e:
-        logger.debug(f"Office 14.0からの取得に失敗: {e}")
-    
     logger.warning("レジストリからExcelパスを取得できませんでした")
     return None
 
@@ -97,7 +75,6 @@ class ExcelUIAutomation:
             # Excelの一般的なインストールパスを試す
             excel_paths = [
                 excel_path,  # レジストリから取得したパスを最初に試す
-                "excel.exe",
                 r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE",
                 r"C:\Program Files (x86)\Microsoft Office\root\Office16\EXCEL.EXE",
                 r"C:\Program Files\Microsoft Office\Office16\EXCEL.EXE",
@@ -223,30 +200,6 @@ class ExcelUIAutomation:
             
         except Exception as e:
             logger.error(f"テキスト入力エラー: {e}")
-            return False
-    
-    def copy_cell(self):
-        """セルをコピー"""
-        try:
-            send_keys(ExcelConfig.get_shortcut('copy'))
-            time.sleep(ExcelConfig.get_timing('cell_selection'))
-            logger.info("セルをコピーしました")
-            return True
-            
-        except Exception as e:
-            logger.error(f"コピーエラー: {e}")
-            return False
-    
-    def paste_cell(self):
-        """セルにペースト"""
-        try:
-            send_keys(ExcelConfig.get_shortcut('paste'))
-            time.sleep(ExcelConfig.get_timing('cell_selection'))
-            logger.info("セルにペーストしました")
-            return True
-            
-        except Exception as e:
-            logger.error(f"ペーストエラー: {e}")
             return False
 
     def click_ribbon_shortcut(self, shortcut_key):
