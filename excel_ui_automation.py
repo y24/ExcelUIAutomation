@@ -9,6 +9,20 @@ from config import ExcelConfig, EnvironmentConfig
 # 環境設定を取得
 env_config = EnvironmentConfig.get_config()
 
+# ログファイルのクリーンアップ（スクリプト実行ごと）
+def cleanup_log_file():
+    """スクリプト実行ごとにログファイルをクリーンアップ"""
+    try:
+        log_file_path = ExcelConfig.LOGGING['file']
+        if os.path.exists(log_file_path):
+            os.remove(log_file_path)
+            print(f"前回のログファイルを削除しました: {log_file_path}")
+    except Exception as e:
+        print(f"ログファイル削除エラー（無視可能）: {e}")
+
+# ログファイルをクリーンアップ
+cleanup_log_file()
+
 # ログ設定
 logging.basicConfig(
     level=getattr(logging, ExcelConfig.LOGGING['level']), 
