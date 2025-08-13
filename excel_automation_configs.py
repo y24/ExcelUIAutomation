@@ -131,16 +131,3 @@ class ExcelConfig:
         start_cell = cls.get_cell_address(start_row, start_col)
         end_cell = cls.get_cell_address(end_row, end_col)
         return f"{start_cell}:{end_cell}"
-
-# 使用例
-if __name__ == "__main__":
-    # 設定の確認
-    print("=== Excel自動化設定 ===")
-    print(f"Excel起動待機時間: {ExcelConfig.get_timing('excel_startup')}秒")
-    print(f"保存ショートカット: {ExcelConfig.get_shortcut('save_file')}")
-    print(f"セルA1のアドレス: {ExcelConfig.get_cell_address(0, 0)}")
-    print(f"範囲A1:C5のアドレス: {ExcelConfig.get_range_address(0, 0, 4, 2)}")
-    
-    # 環境設定の確認
-    dev_config = EnvironmentConfig.get_config('development')
-    print(f"開発環境のデバッグモード: {dev_config['debug_mode']}") 
