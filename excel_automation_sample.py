@@ -59,12 +59,12 @@ def main():
             # 複数ダイアログを処理する例
             dialog_sequence = [
                 {'title_patterns': ['保存の確認', 'Save As', 'Microsoft Excel'], 'key_action': 's'}, #保存ダイアログでsキーを押下
-                {'title_patterns': ['エラー', 'Error'], 'key_action': '{ENTER}'}  #複数のダイアログが連続して出る場合はこのように記述
+                # {'title_patterns': ['エラー', 'Error'], 'key_action': '{ENTER}'}  #複数のダイアログが連続して出る場合はこのように記述
             ]
             print("保存確認ダイアログの保存ボタンを実行します")
             excel.wait_and_handle_dialogs(dialog_sequence)
             
-            print("処理が完了しました")
+            print("デモが完了しました")
         else:
             print("Excelの起動に失敗しました")
             
