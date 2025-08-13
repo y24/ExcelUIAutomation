@@ -51,6 +51,133 @@ class ExcelUIAutomation:
         self.workbook = None
         self.copied_files = []  # コピーしたファイルのパスを記録
         
+    def activate_excel_window(self, max_retries=3, retry_delay=1.0):
+        """
+        Excelウィンドウをアクティベートする汎用的なメソッド
+        
+        Args:
+            max_retries (int): 最大リトライ回数（デフォルト: 3）
+            retry_delay (float): リトライ間隔（秒）（デフォルト: 1.0）
+            
+        Returns:
+            bool: アクティベートに成功したかどうか
+        """
+        try:
+            if not self.app or not self.excel_window:
+                logger.warning("Excelアプリケーションまたはウィンドウが初期化されていません")
+                return False
+            
+            for attempt in range(max_retries):
+                try:
+                    logger.info(f"Excelウィンドウのアクティベートを試行中... (試行 {attempt + 1}/{max_retries})")
+                    
+                    # 方法1: pywinautoのset_focus()を使用
+                    try:
+                        self.excel_window.set_focus()
+                        time.sleep(ExcelConfig.get_timing('window_activation'))
+                        logger.info("pywinautoのset_focus()でExcelウィンドウをアクティベートしました")
+                        return True
+                    except Exception as e:
+                        logger.debug(f"set_focus()でのアクティベートに失敗: {e}")
+                    
+                    # 方法2: ウィンドウハンドルを使用してアクティベート
+                    try:
+                        import win32gui
+                        import win32con
+                        
+                        # ウィンドウハンドルを取得
+                        hwnd = self.excel_window.handle
+                        if hwnd:
+                            # ウィンドウを前面に表示
+                            win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)
+                            time.sleep(ExcelConfig.get_timing('window_activation'))
+                            
+                            # ウィンドウをアクティブにする
+                            win32gui.SetForegroundWindow(hwnd)
+                            time.sleep(ExcelConfig.get_timing('window_activation'))
+                            
+                            logger.info("win32guiを使用してExcelウィンドウをアクティベートしました")
+                            return True
+                    except Exception as e:
+                        logger.debug(f"win32guiでのアクティベートに失敗: {e}")
+                    
+                    # 方法3: Alt+Tabを使用してExcelウィンドウに切り替え
+                    try:
+                        # Alt+Tabでウィンドウを切り替え
+                        send_keys('%{TAB}')
+                        time.sleep(ExcelConfig.get_timing('window_activation'))
+                        
+                        # さらに確実にするため、Altキーを押してリリース
+                        send_keys('%')
+                        time.sleep(ExcelConfig.get_timing('window_activation'))
+                        
+                        logger.info("Alt+Tabを使用してExcelウィンドウをアクティベートしました")
+                        return True
+                    except Exception as e:
+                        logger.debug(f"Alt+Tabでのアクティベートに失敗: {e}")
+                    
+                    # 方法4: ウィンドウタイトルで検索してアクティベート
+                    try:
+                        import win32gui
+                        import win32con
+                        
+                        def enum_windows_callback(hwnd, target_title):
+                            if win32gui.IsWindowVisible(hwnd):
+                                window_title = win32gui.GetWindowText(hwnd)
+                                if target_title.lower() in window_title.lower():
+                                    win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)
+                                    time.sleep(ExcelConfig.get_timing('window_activation'))
+                                    win32gui.SetForegroundWindow(hwnd)
+                                    time.sleep(ExcelConfig.get_timing('window_activation'))
+                                    return False  # 列挙を停止
+                            return True
+                        
+                        # Excelウィンドウを検索してアクティベート
+                        win32gui.EnumWindows(enum_windows_callback, "Excel")
+                        logger.info("ウィンドウタイトル検索でExcelウィンドウをアクティベートしました")
+                        return True
+                    except Exception as e:
+                        logger.debug(f"ウィンドウタイトル検索でのアクティベートに失敗: {e}")
+                    
+                    # リトライ前の待機
+                    if attempt < max_retries - 1:
+                        logger.info(f"アクティベートに失敗しました。{retry_delay}秒後にリトライします...")
+                        time.sleep(retry_delay)
+                    
+                except Exception as e:
+                    logger.debug(f"アクティベート試行 {attempt + 1} でエラー: {e}")
+                    if attempt < max_retries - 1:
+                        time.sleep(retry_delay)
+            
+            logger.warning(f"Excelウィンドウのアクティベートに失敗しました（{max_retries}回試行）")
+            return False
+            
+        except Exception as e:
+            logger.error(f"Excelウィンドウアクティベートエラー: {e}")
+            return False
+    
+    def ensure_excel_active(self, operation_name="操作"):
+        """
+        操作前にExcelウィンドウがアクティブであることを保証するヘルパーメソッド
+        
+        Args:
+            operation_name (str): 実行する操作の名前（ログ用）
+            
+        Returns:
+            bool: Excelウィンドウがアクティブになったかどうか
+        """
+        try:
+            logger.info(f"{operation_name}の前にExcelウィンドウをアクティベート中...")
+            if self.activate_excel_window():
+                logger.info(f"{operation_name}の準備が完了しました")
+                return True
+            else:
+                logger.warning(f"{operation_name}の準備に失敗しましたが、操作を続行します")
+                return False
+        except Exception as e:
+            logger.error(f"Excelウィンドウアクティベート確認エラー: {e}")
+            return False
+
     def start_excel(self, file_path=None):
         """Excelを起動し、指定されたファイルを開く"""
         try:
@@ -129,6 +256,9 @@ class ExcelUIAutomation:
     def open_file(self, file_path):
         """ファイルを開く"""
         try:
+            # Excelウィンドウをアクティベート
+            self.ensure_excel_active("ファイルを開く")
+            
             # Ctrl+O でファイルを開く
             send_keys(ExcelConfig.get_shortcut('open_file'))
             time.sleep(ExcelConfig.get_timing('file_operation'))
@@ -151,6 +281,9 @@ class ExcelUIAutomation:
     def save_file(self, file_path=None):
         """ファイルを保存"""
         try:
+            # Excelウィンドウをアクティベート
+            self.ensure_excel_active("ファイル保存")
+            
             if file_path:
                 # Ctrl+Shift+S で名前を付けて保存
                 send_keys(ExcelConfig.get_shortcut('save_as'))
@@ -173,6 +306,9 @@ class ExcelUIAutomation:
     def select_cell(self, row, column):
         """セルを選択"""
         try:
+            # Excelウィンドウをアクティベート
+            self.ensure_excel_active("セル選択")
+            
             # セルに移動
             cell_address = ExcelConfig.get_cell_address(row, column)
             send_keys(ExcelConfig.get_shortcut('go_to'))  # Ctrl+G でジャンプ
@@ -192,6 +328,9 @@ class ExcelUIAutomation:
     def input_text(self, text):
         """テキストを入力"""
         try:
+            # Excelウィンドウをアクティベート
+            self.ensure_excel_active("テキスト入力")
+            
             send_keys(text)
             time.sleep(ExcelConfig.get_timing('text_input'))
             send_keys('{ENTER}')
@@ -205,6 +344,9 @@ class ExcelUIAutomation:
     def click_ribbon_shortcut(self, shortcut_key):
         """短縮キー形式でリボン操作を実行（例: "H>AC" でホームタブの中央揃え）"""
         try:
+            # Excelウィンドウをアクティベート
+            self.ensure_excel_active("リボン操作")
+            
             # Altキーでリボンにアクセス
             send_keys('%')
             time.sleep(ExcelConfig.get_timing('text_input'))
@@ -246,6 +388,9 @@ class ExcelUIAutomation:
     def close_dialog(self):
         """ダイアログを閉じる"""
         try:
+            # Excelウィンドウをアクティベート
+            self.ensure_excel_active("ダイアログを閉じる")
+            
             send_keys('{ESC}')
             time.sleep(ExcelConfig.get_timing('dialog_wait'))
             logger.info("ダイアログを閉じました")
@@ -259,6 +404,9 @@ class ExcelUIAutomation:
         """Excelを閉じる"""
         try:
             if self.app:
+                # Excelウィンドウをアクティベート
+                self.ensure_excel_active("Excelを閉じる")
+                
                 # 正常にExcelを閉じる（Ctrl+W でワークブックを閉じる）
                 send_keys(ExcelConfig.get_shortcut('close_workbook'))
                 time.sleep(ExcelConfig.get_timing('file_operation'))
