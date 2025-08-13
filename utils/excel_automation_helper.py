@@ -5,7 +5,7 @@ from pywinauto.application import Application
 from pywinauto.keyboard import send_keys
 from pywinauto.findwindows import find_window, find_windows
 import logging
-from excel_automation_configs import ExcelConfig
+from utils.excel_automation_configs import ExcelConfig
 
 # ログファイルのクリーンアップ（スクリプト実行ごと）
 def cleanup_log_file():

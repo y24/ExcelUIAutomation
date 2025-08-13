@@ -1,7 +1,6 @@
 import time
 import logging
-from excel_automation_helper import ExcelUIAutomation
-from excel_automation_configs import ExcelConfig
+from utils.excel_automation_helper import ExcelUIAutomation
 
 # ログ設定
 logger = logging.getLogger(__name__)
@@ -13,7 +12,7 @@ def main():
     try:
         print("Excelを起動中...")
         # Excelを起動
-        if excel_auto.start_excel("demo.xlsx"):
+        if excel_auto.start_excel("templates/demo.xlsx"):
             print("Excelが正常に起動しました")
             
             print("===== セル操作のデモ =====")
