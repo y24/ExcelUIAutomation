@@ -70,10 +70,14 @@ class ExcelUIAutomation:
         self.app = None
         self.excel_window = None
         self.workbook = None
+        self.copied_files = []  # コピーしたファイルのパスを記録
         
     def start_excel(self, file_path=None):
         """Excelを起動し、指定されたファイルを開く"""
         try:
+            # 起動前に復旧ファイルを削除
+            self._cleanup_recovery_files()
+            
             # ファイルが指定されている場合、信頼できる場所にコピー
             if file_path and os.path.exists(file_path):
                 # デスクトップにコピーして保護ビューを回避
@@ -81,6 +85,8 @@ class ExcelUIAutomation:
                 desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
                 safe_file_path = os.path.join(desktop_path, os.path.basename(file_path))
                 shutil.copy2(file_path, safe_file_path)
+                # コピーしたファイルのパスを記録
+                self.copied_files.append(safe_file_path)
                 file_path = safe_file_path
                 logger.info(f"ファイルを信頼できる場所にコピーしました: {safe_file_path}")
             
@@ -133,13 +139,6 @@ class ExcelUIAutomation:
             self.excel_window = self.app.window(title_re=ExcelConfig.get_excel_setting('window_title_pattern'))
             self.excel_window.wait('visible', timeout=ExcelConfig.get_timing('window_wait'))
             
-            # 保護ビューを無効にする（セキュリティ警告が表示された場合）
-            self._handle_protected_view()
-            
-            # 追加の保護ビュー処理（確実性を高めるため）
-            time.sleep(ExcelConfig.get_timing('dialog_wait'))
-            self._handle_protected_view()
-            
             return True
             
         except Exception as e:
@@ -148,71 +147,6 @@ class ExcelUIAutomation:
             import traceback
             traceback.print_exc()
             return False
-    
-    def _handle_protected_view(self):
-        """保護ビューやセキュリティ警告を処理"""
-        try:
-            time.sleep(ExcelConfig.get_timing('dialog_wait'))  # ダイアログが表示されるまで待機
-            
-            # 保護ビューの警告バーを直接クリック
-            try:
-                # 警告バーの「編集を有効にする」ボタンを探す
-                warning_buttons = self.app.window(title_re=".*Excel.*").children()
-                for child in warning_buttons:
-                    try:
-                        if "編集を有効にする" in child.window_text():
-                            child.click()
-                            logger.info("保護ビューの警告バーをクリックしました")
-                            time.sleep(2)
-                            break
-                    except:
-                        continue
-            except:
-                pass
-            
-            # より確実な方法：キーボードショートカット
-            try:
-                # Alt + キーで警告バーにアクセス
-                send_keys('%')  # Altキー
-                time.sleep(ExcelConfig.get_timing('text_input'))
-                send_keys('e')  # 編集を有効にするの「e」
-                time.sleep(ExcelConfig.get_timing('text_input'))
-                logger.info("キーボードショートカットで保護ビューを無効にしました")
-            except:
-                pass
-            
-            # 代替方法：Tabキーでフォーカスを移動してEnter
-            try:
-                send_keys('{TAB 5}')  # 複数回Tabを押してボタンにフォーカス
-                time.sleep(ExcelConfig.get_timing('text_input'))
-                send_keys('{ENTER}')
-                time.sleep(ExcelConfig.get_timing('text_input'))
-                logger.info("Tabキーで保護ビューを無効にしました")
-            except:
-                pass
-            
-            # セキュリティ警告の「編集を有効にする」ボタンをクリック
-            try:
-                security_warning = self.app.window(title_re=".*セキュリティ警告.*")
-                if security_warning.exists():
-                    security_warning.child_window(title="編集を有効にする").click()
-                    logger.info("セキュリティ警告を処理しました")
-                    time.sleep(ExcelConfig.get_timing('dialog_wait'))
-            except:
-                pass
-            
-            # マクロの警告ダイアログを処理
-            try:
-                macro_warning = self.app.window(title_re=".*マクロ.*")
-                if macro_warning.exists():
-                    macro_warning.child_window(title="有効にする").click()
-                    logger.info("マクロ警告を処理しました")
-                    time.sleep(ExcelConfig.get_timing('dialog_wait'))
-            except:
-                pass
-                
-        except Exception as e:
-            logger.debug(f"保護ビュー処理エラー（無視可能）: {e}")
     
     def open_file(self, file_path):
         """ファイルを開く"""
@@ -371,13 +305,130 @@ class ExcelUIAutomation:
         """Excelを閉じる"""
         try:
             if self.app:
-                self.app.kill()
-                logger.info("Excelを閉じました")
+                # 正常にExcelを閉じる（Ctrl+W でワークブックを閉じる）
+                send_keys(ExcelConfig.get_shortcut('close_workbook'))
+                time.sleep(ExcelConfig.get_timing('file_operation'))
+                
+                # 保存確認ダイアログが表示された場合の処理
+                try:
+                    # 保存確認ダイアログの「保存しない」を選択
+                    send_keys('n')  # No
+                    time.sleep(ExcelConfig.get_timing('dialog_wait'))
+                except:
+                    pass
+                
+                # さらに確実に閉じるため、Alt+F4 を使用
+                send_keys('%{F4}')
+                time.sleep(ExcelConfig.get_timing('file_operation'))
+                
+                # それでも残っている場合は強制終了
+                try:
+                    if self.app.is_process_running():
+                        self.app.kill()
+                        logger.info("Excelを強制終了しました")
+                    else:
+                        logger.info("Excelを正常に閉じました")
+                except:
+                    self.app.kill()
+                    logger.info("Excelを強制終了しました")
+                
+                # 復旧ファイルを削除
+                self._cleanup_recovery_files()
+                
             return True
             
         except Exception as e:
             logger.error(f"Excel終了エラー: {e}")
+            # エラーが発生した場合は強制終了
+            try:
+                if self.app:
+                    self.app.kill()
+            except:
+                pass
+            # エラーが発生しても復旧ファイルは削除
+            self._cleanup_recovery_files()
+            # エラー時はコピーしたファイルもクリーンナップ
+            self._cleanup_copied_files()
             return False
+    
+    def _cleanup_recovery_files(self):
+        """復旧ファイルを削除"""
+        try:
+            import glob
+            # Excelの復旧ファイルの一般的な場所
+            recovery_paths = [
+                os.path.expanduser("~/AppData/Local/Microsoft/Office/UnsavedFiles"),
+                os.path.expanduser("~/AppData/Roaming/Microsoft/Excel"),
+            ]
+            
+            # 復旧ファイルのパターン（より具体的に）
+            recovery_patterns = [
+                "*.xlsx~*",
+                "*.xls~*",
+                "*[Recovered]*",
+                "*~$*.xlsx",
+                "*~$*.xls"
+            ]
+            
+            # デスクトップの復旧ファイルのみを削除（より厳密に）
+            desktop_path = os.path.expanduser("~/Desktop")
+            if os.path.exists(desktop_path):
+                # デスクトップでは、より具体的な復旧ファイルパターンのみを対象とする
+                desktop_recovery_patterns = [
+                    "*[オリジナル].xlsx",
+                    "*[オリジナル].xls",
+                    "*[Recovered].xlsx",
+                    "*[Recovered].xls",
+                    "*~$*.xlsx",
+                    "*~$*.xls"
+                ]
+                
+                for pattern in desktop_recovery_patterns:
+                    files = glob.glob(os.path.join(desktop_path, pattern))
+                    for file_path in files:
+                        try:
+                            # コピーしたファイルは削除しない
+                            if file_path in self.copied_files:
+                                logger.debug(f"コピーしたファイルのため削除をスキップ: {file_path}")
+                                continue
+                            
+                            # ファイル名をチェックして、通常のファイルでないことを確認
+                            file_name = os.path.basename(file_path)
+                            if any(keyword in file_name for keyword in ["[オリジナル]", "[Recovered]", "~$"]):
+                                os.remove(file_path)
+                                logger.info(f"デスクトップの復旧ファイルを削除しました: {file_path}")
+                        except Exception as e:
+                            logger.debug(f"デスクトップ復旧ファイル削除エラー（無視可能）: {e}")
+            
+            # その他の場所の復旧ファイルを削除
+            for recovery_path in recovery_paths:
+                if os.path.exists(recovery_path):
+                    for pattern in recovery_patterns:
+                        files = glob.glob(os.path.join(recovery_path, pattern))
+                        for file_path in files:
+                            try:
+                                os.remove(file_path)
+                                logger.info(f"復旧ファイルを削除しました: {file_path}")
+                            except Exception as e:
+                                logger.debug(f"復旧ファイル削除エラー（無視可能）: {e}")
+                                
+        except Exception as e:
+            logger.debug(f"復旧ファイル削除エラー（無視可能）: {e}")
+    
+    def _cleanup_copied_files(self):
+        """コピーしたファイルをクリーンアップ"""
+        try:
+            for file_path in self.copied_files:
+                if os.path.exists(file_path):
+                    try:
+                        os.remove(file_path)
+                        logger.info(f"コピーしたファイルを削除しました: {file_path}")
+                    except Exception as e:
+                        logger.debug(f"コピーしたファイル削除エラー（無視可能）: {e}")
+            # リストをクリア
+            self.copied_files.clear()
+        except Exception as e:
+            logger.debug(f"コピーしたファイルクリーンアップエラー（無視可能）: {e}")
 
 def main():
     """メイン実行例"""

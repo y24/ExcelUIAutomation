@@ -36,6 +36,7 @@ class ExcelConfig:
         'open_file': '^o',           # Ctrl+O
         'save_file': '^s',           # Ctrl+S
         'save_as': '^+s',            # Ctrl+Shift+S
+        'close_workbook': '^w',      # Ctrl+W
         'copy': '^c',                # Ctrl+C
         'paste': '^v',               # Ctrl+V
         'cut': '^x',                 # Ctrl+X
