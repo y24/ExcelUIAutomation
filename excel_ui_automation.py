@@ -156,15 +156,22 @@ class ExcelUIAutomation:
                     logger.debug(f"ダイアログ検索エラー（パターン: {pattern}）: {e}")
                     continue
             
-            # より汎用的な検索
+            # より汎用的な検索（メインのExcelウィンドウを除外）
             try:
                 excel_dialogs = find_windows(title_re=".*Microsoft Excel.*")
+                
                 for dialog in excel_dialogs:
                     dialog_title = dialog.window_text()
-                    logger.debug(f"検出されたダイアログ: {dialog_title}")
+                    
+                    # メインのExcelウィンドウを除外（通常はファイル名を含む）
+                    if self.excel_window and dialog.handle == self.excel_window.handle:
+                        continue
+                    
+                    # パターンマッチングをチェック
                     if any(pattern.lower() in dialog_title.lower() for pattern in title_patterns):
                         logger.info(f"ダイアログが表示されています: {dialog_title}")
                         return True, dialog
+                        
             except Exception as e:
                 logger.debug(f"汎用ダイアログ検索エラー: {e}")
             
@@ -751,11 +758,12 @@ def main():
             # ===== ダイアログ処理機能のデモ =====
             print("ダイアログ処理機能のデモ...")
 
-            # print("名前の定義ダイアログを表示中...")
-            # excel_auto.click_ribbon_shortcut("M>M>D")
+            print("名前の定義ダイアログを表示中...")
+            excel_auto.click_ribbon_shortcut("M>M>D")
 
             # 単一のダイアログタイトルパターンをチェック
-            if excel_auto.is_dialog_present("新しい名前"):
+            dialog_found, dialog_window = excel_auto.is_dialog_present("新しい名前")
+            if dialog_found:
                 print("名前の定義ダイアログが表示されています。キャンセルします")
                 excel_auto.handle_dialog("新しい名前", "{ESC}")
             
