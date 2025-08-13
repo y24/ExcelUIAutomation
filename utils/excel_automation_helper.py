@@ -56,7 +56,7 @@ def get_excel_path():
     logger.warning("レジストリからExcelパスを取得できませんでした")
     return None
 
-class ExcelUIAutomation:
+class ExcelAutomationHelper:
     def __init__(self):
         self.app = None
         self.excel_window = None
